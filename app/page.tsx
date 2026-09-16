@@ -9,8 +9,8 @@ import Link from "next/link";
 export default function Home() {
   const cards = [
     {
-      title: "Systèmes embarqués & Firmware",
-      src: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1000&auto=format&fit=crop",
+      title: "Gant Magique",
+      src: "public/IMG_GantsMag",
     },
     {
       title: "Conception électronique & Routage",
