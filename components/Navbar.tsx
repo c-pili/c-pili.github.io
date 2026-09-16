@@ -22,7 +22,7 @@ export function Navbar() {
             P
           </div>
           <span className="font-semibold text-sm tracking-tight text-white hover:opacity-80 transition">
-            Portfolio
+            Clément PILI
           </span>
         </Link>
 
