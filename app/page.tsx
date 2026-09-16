@@ -10,14 +10,14 @@ export default function Home() {
   const cards = [
     {
       title: "Gant Magique",
-      src: "/IMG_GantsMag",
+      src: "/IMG_GantsMag.jpg",
     },
     {
-      title: "Conception électronique & Routage",
+      title: "Matrice LED",
       src: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=1000&auto=format&fit=crop",
     },
     {
-      title: "Réseaux, IoT & Domotique",
+      title: "Cellule Festo",
       src: "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?q=80&w=1000&auto=format&fit=crop",
     },
   ];
