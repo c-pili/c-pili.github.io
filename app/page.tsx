@@ -10,7 +10,7 @@ export default function Home() {
   const cards = [
     {
       title: "Gant Magique",
-      src: "IMG_GantsMag",
+      src: "/IMG_GantsMag",
     },
     {
       title: "Conception électronique & Routage",
