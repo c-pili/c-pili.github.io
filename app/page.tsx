@@ -10,7 +10,7 @@ export default function Home() {
   const cards = [
     {
       title: "Gant Magique",
-      src: "public/IMG_GantsMag",
+      src: "IMG_GantsMag",
     },
     {
       title: "Conception électronique & Routage",
@@ -19,10 +19,6 @@ export default function Home() {
     {
       title: "Réseaux, IoT & Domotique",
       src: "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?q=80&w=1000&auto=format&fit=crop",
-    },
-    {
-      title: "Interfaces & Automatisation",
-      src: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1000&auto=format&fit=crop",
     },
   ];
 
