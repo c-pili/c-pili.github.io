@@ -1,6 +1,42 @@
 <html lang="fr">
 <body>
-    <h1>Bienvenue sur mon site web</h1>
-    <p>Ceci est un exemple de page HTML.</p>
+    <<!-- Fond dégradé doux -->
+<div class="relative min-h-screen bg-gradient-to-b from-[#2d6df6] via-[#7aa2f7] to-white text-white antialiased">
+  
+  <!-- Navigation semi-transparente -->
+  <nav class="flex items-center justify-between px-8 py-4 backdrop-blur-md bg-white/10 border-b border-white/10">
+    <span class="font-bold text-lg">MonProjet</span>
+    <button class="rounded-full bg-white text-slate-900 px-4 py-2 text-sm font-semibold hover:bg-slate-100 transition">
+      Commencer &rarr;
+    </button>
+  </nav>
+
+  <!-- Hero section -->
+  <main class="max-w-6xl mx-auto px-6 pt-20 pb-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    <div>
+      <h1 class="text-5xl font-bold tracking-tight leading-tight">
+        Propulsez vos projets avec une interface moderne.
+      </h1>
+      <p class="mt-4 text-lg text-white/80">
+        Une description claire et percutante de votre outil ou bibliothèque.
+      </p>
+      <div class="mt-8 flex gap-4">
+        <button class="bg-white text-blue-600 px-6 py-3 rounded-full font-semibold shadow-lg">
+          Essayer
+        </button>
+        <button class="bg-white/20 border border-white/30 backdrop-blur-sm px-6 py-3 rounded-full font-semibold hover:bg-white/30">
+          Documentation
+        </button>
+      </div>
+    </div>
+
+    <!-- Mockup d'application -->
+    <div class="relative">
+      <div class="rounded-xl overflow-hidden shadow-2xl border border-white/20">
+        <img src="app-preview.png" alt="Aperçu du logiciel" class="w-full h-auto block" />
+      </div>
+    </div>
+  </main>
+</div>
 
 </html>
