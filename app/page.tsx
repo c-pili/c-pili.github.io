@@ -18,7 +18,7 @@ export default function Home() {
     },
     {
       title: "Cellule Festo",
-      src: "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?q=80&w=1000&auto=format&fit=crop",
+      src: "/IMG_CelluleFesto.jpg",
     },
   ];
 

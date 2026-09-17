@@ -1,8 +1,13 @@
 {
   "ExpandedNodes": [
     "",
-    "\\c-pili"
+    "\\app",
+    "\\app\\Projets",
+    "\\app\\Projets\\cellule-festo",
+    "\\components",
+    "\\components\\ui",
+    "\\public"
   ],
-  "SelectedNode": "\\c-pili\\.gitignore",
+  "SelectedNode": "\\app\\Projets\\cellule-festo\\page.tsx",
   "PreviewInSolutionExplorer": false
 }
