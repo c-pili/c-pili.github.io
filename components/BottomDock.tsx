@@ -28,20 +28,6 @@ export function BottomDock() {
     href: "/projets/gant-magique",
     },
 {
-    title: "Matrice LED",
-        icon: (
-            <IconCircuitSwitchClosed className= "h-full w-full text-neutral-600 hover:text-blue-600 transition-colors" />
-      ),
-    href: "/projets/matrice-led",
-    },
-{
-    title: "Cellule Festo",
-        icon: (
-            <IconAssembly className= "h-full w-full text-neutral-600 hover:text-blue-600 transition-colors" />
-      ),
-    href: "/projets/cellule-festo",
-    },
-{
     title: "GitHub",
         icon: (
             <IconBrandGithub className= "h-full w-full text-neutral-600 hover:text-blue-600 transition-colors" />
