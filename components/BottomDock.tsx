@@ -58,10 +58,10 @@ export function BottomDock() {
   ];
 
 return (
-    <aside aria - label= "Navigation flottante" className = "fixed bottom-8 sm:bottom-10 inset-x-0 z-50 flex items-center justify-center pointer-events-none" >
-        <div className="pointer-events-auto shadow-[0_10px_35px_rgba(0,0,0,0.12)] rounded-full border border-neutral-200/80 bg-white/85 backdrop-blur-xl p-1" >
-            <FloatingDock items={ links } />
-                </div>
-                </aside>
+    <div className= "fixed bottom-8 sm:bottom-10 inset-x-0 z-50 flex items-center justify-center pointer-events-none" >
+    <div className="pointer-events-auto shadow-lg rounded-full border border-neutral-200 bg-white/85 backdrop-blur-xl p-1" >
+        <FloatingDock items={ links } />
+            </div>
+            </div>
   );
 }
