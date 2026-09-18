@@ -62,10 +62,10 @@ export default function ContactPage() {
               <div>
                 <span className="block text-xs font-mono uppercase text-slate-400">Email direct</span>
                 <a
-                  href="mailto:contact@c-pili.fr"
+                  href="mailto:Clement.pili@etu.univ-smb.fr"
                   className="font-medium text-slate-900 hover:text-blue-600 transition"
                 >
-                  contact@c-pili.fr
+                  Clement.pili@etu.univ-smb.fr
                 </a>
               </div>
               <div>

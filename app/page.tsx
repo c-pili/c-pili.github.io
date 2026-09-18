@@ -25,7 +25,7 @@ export default function Home() {
         },
         {
             title: "Cellule Festo",
-            src: "/IMG_CelluleFesto.jpg",
+            src: "/IMG_CelluleFesto.png",
             href: "/projets/cellule-festo",
             category: "Automatisme Industriel",
             desc: "Banc pneumatique automatisé, programmation API et architecture Grafcet.",
@@ -83,7 +83,7 @@ export default function Home() {
         // Fallback automatique si la photo n'est pas encore ajoutée
         (e.target as HTMLElement).setAttribute(
             "src",
-            "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop"
+            "/IMG_Accueil.jpg"
         );
     }
 }
