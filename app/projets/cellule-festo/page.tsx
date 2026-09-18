@@ -17,7 +17,7 @@ export default function CelluleFestoPage() {
 
         <div className="overflow-hidden rounded-2xl border border-slate-200/80 shadow-md mb-10 max-h-[460px] bg-slate-100">
           <img
-            src="/IMG_CelluleFesto.jpg"
+            src="/IMG_CelluleFesto.png"
             alt="Cellule Festo"
             className="w-full h-full object-cover"
           />

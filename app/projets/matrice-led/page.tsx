@@ -17,7 +17,7 @@ export default function MatriceLedPage() {
 
         <div className="overflow-hidden rounded-2xl border border-slate-200/80 shadow-md mb-10 max-h-[460px] bg-slate-100">
           <img
-            src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=1000&auto=format&fit=crop"
+            src="/IMG_MatriceLED.png"
             alt="Matrice LED"
             className="w-full h-full object-cover"
           />

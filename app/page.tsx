@@ -18,7 +18,7 @@ export default function Home() {
         },
         {
             title: "Matrice LED",
-            src: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=1000&auto=format&fit=crop",
+            src: "/IMG_MatriceLED.png",
             href: "/projets/matrice-led",
             category: "Électronique & Routage",
             desc: "Pilotage adressable haute fréquence et synchronisation d'effets visuels dynamiques.",
