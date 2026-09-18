@@ -17,10 +17,10 @@ export function Footer() {
           </p>
                                 < div className = "pt-2" >
                                     <a
-              href="mailto:contact@c-pili.fr"
+              href="mailto:Clement.pili@etu.univ-smb.fr"
     className = "font-mono text-sm tracking-wide text-neutral-200 hover:text-white underline underline-offset-4 decoration-neutral-600 hover:decoration-blue-500 transition-all"
         >
-        CONTACT@C-PILI.FR
+        Clement.pili@etu.univ-smb.fr
             </a>
             </div>
             </div>
@@ -64,7 +64,7 @@ export function Footer() {
                                                         <a href="https://github.com/c-pili" target = "_blank" rel = "noopener noreferrer" className = "hover:text-white transition" > GitHub </a>
                                                             </li>
                                                             < li >
-                                                            <a href="https://linkedin.com" target = "_blank" rel = "noopener noreferrer" className = "hover:text-white transition" > LinkedIn </a>
+                                                            <a href="www.linkedin.com/in/cl%C3%A9ment-pili/" target = "_blank" rel = "noopener noreferrer" className = "hover:text-white transition" > LinkedIn </a>
                                                                 </li>
                                                                 </ul>
                                                                 </div>
