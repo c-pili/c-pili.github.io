@@ -16,52 +16,52 @@ export function BottomDock() {
         {
             title: "Accueil",
             icon: (
-                <IconHome className= "h-full w-full text-neutral-400 hover:text-white transition-colors" />
+                <IconHome className= "h-full w-full text-neutral-600 hover:text-blue-600 transition-colors" />
       ),
     href: "/",
     },
 {
     title: "Gant Magique",
         icon: (
-            <IconCpu className= "h-full w-full text-neutral-400 hover:text-white transition-colors" />
+            <IconCpu className= "h-full w-full text-neutral-600 hover:text-blue-600 transition-colors" />
       ),
     href: "/projets/gant-magique",
     },
 {
     title: "Matrice LED",
         icon: (
-            <IconCircuitSwitchClosed className= "h-full w-full text-neutral-400 hover:text-white transition-colors" />
+            <IconCircuitSwitchClosed className= "h-full w-full text-neutral-600 hover:text-blue-600 transition-colors" />
       ),
     href: "/projets/matrice-led",
     },
 {
     title: "Cellule Festo",
         icon: (
-            <IconAssembly className= "h-full w-full text-neutral-400 hover:text-white transition-colors" />
+            <IconAssembly className= "h-full w-full text-neutral-600 hover:text-blue-600 transition-colors" />
       ),
     href: "/projets/cellule-festo",
     },
 {
     title: "GitHub",
         icon: (
-            <IconBrandGithub className= "h-full w-full text-neutral-400 hover:text-white transition-colors" />
+            <IconBrandGithub className= "h-full w-full text-neutral-600 hover:text-blue-600 transition-colors" />
       ),
     href: "https://github.com/c-pili",
     },
 {
     title: "Contact",
         icon: (
-            <IconMail className= "h-full w-full text-neutral-400 hover:text-white transition-colors" />
+            <IconMail className= "h-full w-full text-neutral-600 hover:text-blue-600 transition-colors" />
       ),
-    href: "mailto:contact@c-pili.fr",
+    href: "/contact",
     },
   ];
 
 return (
-    <div className= "fixed bottom-6 inset-x-0 z-50 flex items-center justify-center pointer-events-none" >
-    <div className="pointer-events-auto" >
-        <FloatingDock items={ links } />
-            </div>
-            </div>
+    <aside aria - label= "Navigation flottante" className = "fixed bottom-8 sm:bottom-10 inset-x-0 z-50 flex items-center justify-center pointer-events-none" >
+        <div className="pointer-events-auto shadow-[0_10px_35px_rgba(0,0,0,0.12)] rounded-full border border-neutral-200/80 bg-white/85 backdrop-blur-xl p-1" >
+            <FloatingDock items={ links } />
+                </div>
+                </aside>
   );
 }
