@@ -64,7 +64,7 @@ export function Footer() {
                                                         <a href="https://github.com/c-pili" target = "_blank" rel = "noopener noreferrer" className = "hover:text-white transition" > GitHub </a>
                                                             </li>
                                                             < li >
-                                                            <a href="www.linkedin.com/in/clément-pili" target = "_blank" rel = "noopener noreferrer" className = "hover:text-white transition" > LinkedIn </a>
+                                                            <a href="https://www.linkedin.com/in/cl%C3%A9ment-pili/" target = "_blank" rel = "noopener noreferrer" className = "hover:text-white transition" > LinkedIn </a>
                                                                 </li>
                                                                 </ul>
                                                                 </div>
