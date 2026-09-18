@@ -149,7 +149,7 @@ className = "h-full w-full object-cover group-hover:scale-105 transition-transfo
 
                     < div className = "mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-mono text-slate-400 group-hover:text-blue-600 transition-colors" >
                         <span>En savoir plus </span>
-                            < span className = "group-hover:translate-x-1 transition-transform" >& rarr; </span>
+                            < span className = "group-hover:translate-x-1 transition-transform" > </span>
                                 </div>
                                 </div>
                                 </Link>
