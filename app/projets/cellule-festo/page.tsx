@@ -1,35 +1,60 @@
 "use client";
 
 import React from "react";
-import { Navbar } from "@/components/Navbar";
 import Link from "next/link";
+import { Footer } from "@/components/Footer";
 
 export default function CelluleFestoPage() {
   return (
-    <main className="min-h-screen bg-[#0B0B0F] text-white pt-28 px-6 pb-20">
-      <Navbar />
-      <div className="max-w-4xl mx-auto">
-        <Link href="/" className="text-xs font-mono text-neutral-400 hover:text-white transition flex items-center gap-2 mb-8">
+    <main className="min-h-screen bg-[#FBFBFD] text-slate-900 antialiased selection:bg-blue-100 selection:text-blue-900">
+      <div className="max-w-4xl mx-auto px-6 pt-24 pb-20 md:pt-32">
+        <Link
+          href="/"
+          className="inline-flex items-center gap-2 text-xs font-mono text-slate-500 hover:text-slate-900 transition mb-8"
+        >
           &larr; Retour à l&apos;accueil
         </Link>
-        <div className="overflow-hidden rounded-2xl border border-white/10 mb-8 max-h-[450px]">
-          <img src="/IMG_CelluleFesto.jpg" alt="Cellule Festo" className="w-full h-full object-cover" />
+
+        <div className="overflow-hidden rounded-2xl border border-slate-200/80 shadow-md mb-10 max-h-[460px] bg-slate-100">
+          <img
+            src="/IMG_CelluleFesto.jpg"
+            alt="Cellule Festo"
+            className="w-full h-full object-cover"
+          />
         </div>
-        <h1 className="text-4xl font-bold tracking-tight mb-4">Projet : Cellule Festo</h1>
-        <div className="flex flex-wrap gap-2 mb-8">
-          <span className="px-3 py-1 bg-blue-500/10 border border-blue-500/20 text-blue-400 rounded-full text-xs">Automatisme industriel</span>
-          <span className="px-3 py-1 bg-white/5 border border-white/10 text-neutral-300 rounded-full text-xs">Pneumatique</span>
-          <span className="px-3 py-1 bg-white/5 border border-white/10 text-neutral-300 rounded-full text-xs">API / Grafcet</span>
-        </div>
-        <div className="text-neutral-300 space-y-4 text-sm sm:text-base leading-relaxed">
-          <p>
-            Programmation et mise en service d&apos;un banc d&apos;automatisation Festo combinant préhenseurs pneumatiques, capteurs inductifs et convoyage de pièces.
-          </p>
-          <p>
-            Élaboration des cycles de production selon la modélisation Grafcet, avec gestion des modes de marche (automatique, manuel) et des arrêts d&apos;urgence de sécurité.
-          </p>
+
+        <div className="space-y-4">
+          <span className="text-xs font-mono uppercase tracking-widest text-blue-600 font-semibold">
+            Automatisme & Pneumatique
+          </span>
+          <h1 className="text-4xl font-extrabold tracking-tight text-slate-950">
+            Projet : Cellule Festo
+          </h1>
+
+          <div className="flex flex-wrap gap-2 pt-2">
+            <span className="px-3 py-1 bg-blue-50 border border-blue-200 text-blue-700 rounded-full text-xs font-medium">
+              Automate programmable (API)
+            </span>
+            <span className="px-3 py-1 bg-slate-100 border border-slate-200 text-slate-700 rounded-full text-xs font-medium">
+              Vérins & Distributeurs
+            </span>
+            <span className="px-3 py-1 bg-slate-100 border border-slate-200 text-slate-700 rounded-full text-xs font-medium">
+              Modélisation Grafcet
+            </span>
+          </div>
+
+          <div className="pt-6 text-slate-600 text-base leading-relaxed space-y-4 border-t border-slate-200/70 mt-6">
+            <p>
+              Programmation, câblage et mise en service d&apos;une cellule automatisée industrielle Festo dédiée au transfert et au tri sélectif de pièces.
+            </p>
+            <p>
+              Mise en œuvre des logiques de contrôle-commande (modes automatique, manuel, arrêt d&apos;urgence) et intégration de capteurs optiques et inductifs.
+            </p>
+          </div>
         </div>
       </div>
+
+      <Footer />
     </main>
   );
 }

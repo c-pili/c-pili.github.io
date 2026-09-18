@@ -1,35 +1,60 @@
 "use client";
 
 import React from "react";
-import { Navbar } from "@/components/Navbar";
 import Link from "next/link";
+import { Footer } from "@/components/Footer";
 
 export default function GantMagiquePage() {
   return (
-    <main className="min-h-screen bg-[#0B0B0F] text-white pt-28 px-6 pb-20">
-      <Navbar />
-      <div className="max-w-4xl mx-auto">
-        <Link href="/" className="text-xs font-mono text-neutral-400 hover:text-white transition flex items-center gap-2 mb-8">
+    <main className="min-h-screen bg-[#FBFBFD] text-slate-900 antialiased selection:bg-blue-100 selection:text-blue-900">
+      <div className="max-w-4xl mx-auto px-6 pt-24 pb-20 md:pt-32">
+        <Link
+          href="/"
+          className="inline-flex items-center gap-2 text-xs font-mono text-slate-500 hover:text-slate-900 transition mb-8"
+        >
           &larr; Retour à l&apos;accueil
         </Link>
-        <div className="overflow-hidden rounded-2xl border border-white/10 mb-8 max-h-[450px]">
-          <img src="/IMG_GantsMag.jpg" alt="Gant Magique" className="w-full h-full object-cover" />
+
+        <div className="overflow-hidden rounded-2xl border border-slate-200/80 shadow-md mb-10 max-h-[460px] bg-slate-100">
+          <img
+            src="/IMG_GantsMag.jpg"
+            alt="Gant Magique"
+            className="w-full h-full object-cover"
+          />
         </div>
-        <h1 className="text-4xl font-bold tracking-tight mb-4">Projet : Gant Magique</h1>
-        <div className="flex flex-wrap gap-2 mb-8">
-          <span className="px-3 py-1 bg-blue-500/10 border border-blue-500/20 text-blue-400 rounded-full text-xs">Capteurs & Gestuelle</span>
-          <span className="px-3 py-1 bg-white/5 border border-white/10 text-neutral-300 rounded-full text-xs">Microcontrôleur</span>
-          <span className="px-3 py-1 bg-white/5 border border-white/10 text-neutral-300 rounded-full text-xs">I2C / SPI</span>
-        </div>
-        <div className="text-neutral-300 space-y-4 text-sm sm:text-base leading-relaxed">
-          <p>
-            Ce dispositif portable interactif intègre des capteurs de flexion et une centrale inertielle pour interpréter les mouvements et gestes de la main en temps réel.
-          </p>
-          <p>
-            Les données acquises sont traitées localement afin d&apos;exécuter des commandes sans fil ou de déclencher des interactions lumineuses et sonores.
-          </p>
+
+        <div className="space-y-4">
+          <span className="text-xs font-mono uppercase tracking-widest text-blue-600 font-semibold">
+            Systèmes Embarqués & Wearable
+          </span>
+          <h1 className="text-4xl font-extrabold tracking-tight text-slate-950">
+            Projet : Gant Magique
+          </h1>
+
+          <div className="flex flex-wrap gap-2 pt-2">
+            <span className="px-3 py-1 bg-blue-50 border border-blue-200 text-blue-700 rounded-full text-xs font-medium">
+              Capteurs de flexion
+            </span>
+            <span className="px-3 py-1 bg-slate-100 border border-slate-200 text-slate-700 rounded-full text-xs font-medium">
+              Centrale inertielle (IMU)
+            </span>
+            <span className="px-3 py-1 bg-slate-100 border border-slate-200 text-slate-700 rounded-full text-xs font-medium">
+              Traitement temps réel
+            </span>
+          </div>
+
+          <div className="pt-6 text-slate-600 text-base leading-relaxed space-y-4 border-t border-slate-200/70 mt-6">
+            <p>
+              Ce gant interactif intègre des capteurs résistifs de courbure couplés à un accéléromètre/gyroscope pour capturer la dynamique et la posture de la main.
+            </p>
+            <p>
+              Les signaux bruts sont calibrés et filtrés numériquement par le microcontrôleur avant d&apos;être transmis sans fil pour commander des périphériques distants ou déclencher des séquences interactives.
+            </p>
+          </div>
         </div>
       </div>
+
+      <Footer />
     </main>
   );
 }
