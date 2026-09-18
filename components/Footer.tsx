@@ -9,7 +9,7 @@ export function Footer() {
             < div className = "md:col-span-5 space-y-4" >
                 <div className="flex items-center gap-3" >
                     <span className="font-bold text-2xl tracking-tighter text-white font-mono uppercase" >
-                        C.PILI
+                        Clément PILI
                         </span>
                         </div>
                         < p className = "text-sm text-neutral-400 max-w-sm leading-relaxed" >
@@ -17,10 +17,10 @@ export function Footer() {
           </p>
                                 < div className = "pt-2" >
                                     <a
-              href="mailto:contact@c-pili.fr"
+              href="mailto:Clement.pili@etu.univ-smb.fr"
     className = "font-mono text-sm tracking-wide text-neutral-200 hover:text-white underline underline-offset-4 decoration-neutral-600 hover:decoration-blue-500 transition-all"
         >
-        CONTACT@C-PILI.FR
+        Clement.pili@etu.univ-smb.fr
             </a>
             </div>
             </div>

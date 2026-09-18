@@ -21,11 +21,11 @@ export function BottomDock() {
     href: "/",
     },
 {
-    title: "Gant Magique",
+    title: "Projets",
         icon: (
             <IconCpu className= "h-full w-full text-neutral-600 hover:text-blue-600 transition-colors" />
       ),
-    href: "/projets/gant-magique",
+    href: "/#projets",
     },
 {
     title: "GitHub",
