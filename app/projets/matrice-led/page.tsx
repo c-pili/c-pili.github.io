@@ -64,7 +64,7 @@ export default function MatriceLedPage() {
     {
       title: "Registres a Décalages",
       description:
-        "Un registre a décalage est un système séquentiel qui permet d’enregistrer des bits et lorsqu’un nouveau arrive, il les décale de 1bits. Ça permet de déplacer bit a bit de la donnée dans un circuit numérique grâce à un ensemble de bascule synchrone. Les registres à décalage peuvent facilement être câblés en série tant qu’ils sont sur la même cadence.  La cadence de basculement est rythmée par un signal d’horloge.",
+        "Un registre a décalage est un système séquentiel qui permet d’enregistrer des bits et lorsqu’un nouveau arrive, il les décale de 1bits. Ça permet de déplacer bit a bit de la donnée dans un circuit numérique grâce à un ensemble de bascule synchrone. Les registres à décalage peuvent facilement être câblés en série tant qu’ils sont sur la même cadence.  La cadence de basculement est rythmée par un signal d’horloge",
       content: (
         <img
           // Remplacez cette URL par votre propre image, ex: "/IMG_ESP32.jpg"
@@ -77,7 +77,7 @@ export default function MatriceLedPage() {
     {
       title: "Intégration TinyRTC",
       description:
-        "Développement de programmes de rendu dynamique. Les coordonnées 2D (X, Y) sont traduites en un index 1D correspondant au câblage en serpentin de la matrice, permettant des animations fluides.",
+        "Le module TinyRTC Comprend un DS1307 (Horloge temps réel (RTC) avec interface I2C), 24C32 (EEPROM 32kBits (non utilisé dans le Snake). Il est alimenté par une pile, ce qui permet de conserver l’heure même lorsque la carte Arduino n’est pas alimentée. Cela évite de devoir ressaisir l’heure à chaque fois que on rallume le système",
       content: (
         <img
           // Remplacez cette URL par votre propre image, ex: "/IMG_Altium.jpg"
