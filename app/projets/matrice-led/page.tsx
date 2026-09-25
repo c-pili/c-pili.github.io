@@ -36,7 +36,7 @@ export default function MatriceLedPage() {
       id: 1,
       name: "Clément PILI",
       designation: "Conception Hardware & Code C++",
-      image: "/profil.jpg",
+      image: "/IMG_Profile.JPG",
     },
     {
       id: 2,

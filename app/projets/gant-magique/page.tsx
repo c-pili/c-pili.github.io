@@ -36,7 +36,7 @@ export default function GantMagiquePage() {
       id: 1,
       name: "Clément PILI",
       designation: "Développement & Hardware",
-      image: "/profil.jpg",
+      image: "/IMG_Profile.JPG",
     },
     {
       id: 2,

@@ -78,7 +78,7 @@ export default function Home() {
         <div className="h-44 w-44 sm:h-52 sm:w-52 rounded-2xl overflow-hidden border-2 border-white shadow-[0_12px_30px_rgba(0,0,0,0.08)] bg-slate-100 ring-1 ring-slate-200/80" >
         {/* Remplacez par votre photo dans public/profil.jpg */ }
             < img
-    src = "/profil.jpg"
+    src = "/IMG_Profile.JPG"
     onError = {(e) => {
         // Fallback automatique si la photo n'est pas encore ajoutée
         (e.target as HTMLElement).setAttribute(
