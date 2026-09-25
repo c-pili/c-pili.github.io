@@ -91,8 +91,9 @@ export default function GantMagiquePage() {
 
   const galleryImages = [
     "/IMG_GantsMag.jpg",
-    "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1000&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=1000&auto=format&fit=crop",
+    "/IMG_Gants-1.png",
+    "/IMG_Gants-2.png",
+    "/IMG_Gants-3.png",
   ];
 
   return (
