@@ -1,39 +1,58 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { Footer } from "@/components/Footer";
 import { AnimatedTooltip } from "@/components/ui/animated-tooltip";
-import { StickyScroll } from "@/components/ui/sticky-scroll-reveal";
 import { PixelReveal } from "@/components/ui/pixel-reveal";
 import { AccordionGallery } from "@/components/ui/accordion-gallery";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function GantMagiquePage() {
-  // L'équipe du projet avec le tooltip animé
+  const [activeSection, setActiveSection] = useState(0);
+
+  // Écouteur de défilement pour détecter quelle section textuelle est à l'écran
+  useEffect(() => {
+    const handleScroll = () => {
+      const elements = document.querySelectorAll(".scroll-section");
+      let current = 0;
+      elements.forEach((el, index) => {
+        const rect = el.getBoundingClientRect();
+        // Si le bloc de texte arrive dans la moitié supérieure de l'écran
+        if (rect.top < window.innerHeight / 2) {
+          current = index;
+        }
+      });
+      setActiveSection(current);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Init au chargement
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const team = [
     {
       id: 1,
       name: "Clément PILI",
-      designation: "Développement & Hardware (GEII - ESE)",
+      designation: "Développement & Hardware",
       image: "/profil.jpg",
     },
     {
       id: 2,
       name: "Matthieu",
       designation: "Software & Intégration GitHub",
-      image: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=200&auto=format&fit=crop", 
+      image: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=200&auto=format&fit=crop",
     },
   ];
 
-  // Le contenu du Sticky Scroll
   const scrollContent = [
     {
       title: "Conception & Routage",
       description:
         "Modélisation de l'architecture matérielle et routage des circuits imprimés sous Altium Designer pour intégrer les capteurs de flexion et la centrale inertielle de manière ergonomique.",
       content: (
-        <div className="h-full w-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white rounded-xl shadow-inner">
+        <div className="h-full w-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white">
           <span className="font-mono text-sm tracking-widest uppercase">Hardware & Altium</span>
         </div>
       ),
@@ -43,7 +62,7 @@ export default function GantMagiquePage() {
       description:
         "Programmation bas niveau sur microcontrôleur (STM32 / ESP32) pour l'acquisition des données I2C/SPI. Utilisation de Matlab pour simuler et ajuster les filtres de traitement du signal.",
       content: (
-        <div className="h-full w-full bg-gradient-to-br from-emerald-400 to-teal-600 flex items-center justify-center text-white rounded-xl shadow-inner">
+        <div className="h-full w-full bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center text-white">
           <span className="font-mono text-sm tracking-widest uppercase">Firmware & Matlab</span>
         </div>
       ),
@@ -53,14 +72,13 @@ export default function GantMagiquePage() {
       description:
         "Développement collaboratif avec une gestion de version stricte sous GitHub, assurant une intégration fluide des modules logiciels et une synchronisation parfaite entre les différentes cartes.",
       content: (
-        <div className="h-full w-full bg-gradient-to-br from-slate-700 to-slate-900 flex items-center justify-center text-white rounded-xl shadow-inner">
+        <div className="h-full w-full bg-gradient-to-br from-slate-700 to-slate-900 flex items-center justify-center text-white">
           <span className="font-mono text-sm tracking-widest uppercase">Git & Déploiement</span>
         </div>
       ),
     },
   ];
 
-  // Images pour l'accordéon final
   const galleryImages = [
     "/IMG_GantsMag.jpg",
     "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1000&auto=format&fit=crop",
@@ -86,16 +104,16 @@ export default function GantMagiquePage() {
             <span className="text-xs font-mono uppercase tracking-widest text-blue-600 font-semibold block mb-3">
               Projet de spécialité ESE
             </span>
-            <motion.h1 
+            <motion.h1
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
               className="text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-950"
             >
               Le Gant Magique
             </motion.h1>
           </div>
-          
+
           <div className="flex flex-col items-start md:items-end gap-3">
             <span className="text-xs font-mono text-slate-500 uppercase tracking-wider">Équipe projet</span>
             <div className="flex flex-row items-center">
@@ -104,24 +122,62 @@ export default function GantMagiquePage() {
           </div>
         </div>
 
-        {/* 3. Texte avec éléments épurés (Sticky Scroll) */}
-        <div className="mt-16 mb-24">
-          <div className="mb-10 max-w-2xl">
-            <h2 className="text-2xl font-bold text-slate-900 mb-4">Architecture Technique</h2>
-            <p className="text-slate-600 leading-relaxed">
-              Ce projet met en synergie la capture de mouvement et l'électronique embarquée. Le défi principal consistait à miniaturiser l'acquisition tout en garantissant un traitement du signal robuste en temps réel.
-            </p>
-          </div>
+        {/* 3. Section Architecture Intégrée à la page (Sticky Natif) */}
+        <div className="mt-16 mb-32 flex flex-col md:flex-row items-start gap-12 relative">
           
-          {/* Composant Sticky Scroll Reveal */}
-          <div className="rounded-3xl overflow-hidden border border-slate-200 shadow-sm">
-            <StickyScroll content={scrollContent} />
+          {/* Colonne de gauche : Texte qui défile normalement avec la page */}
+          <div className="w-full md:w-1/2 pb-32">
+            <div className="mb-20">
+              <h2 className="text-2xl font-bold text-slate-900 mb-4">Architecture Technique</h2>
+              <p className="text-slate-600 leading-relaxed">
+                Ce projet met en synergie la capture de mouvement et l&apos;électronique embarquée. Le défi principal consistait à miniaturiser l&apos;acquisition tout en garantissant un traitement du signal robuste en temps réel.
+              </p>
+            </div>
+
+            {/* Espacement important pour créer l'effet de défilement */}
+            {scrollContent.map((item, index) => (
+              <div key={index} className="scroll-section min-h-[50vh] pt-10">
+                <h3
+                  className={`text-3xl font-bold mb-4 transition-colors duration-500 ${
+                    activeSection === index ? "text-blue-600" : "text-slate-300"
+                  }`}
+                >
+                  {item.title}
+                </h3>
+                <p
+                  className={`leading-relaxed text-lg transition-opacity duration-500 ${
+                    activeSection === index ? "opacity-100 text-slate-600" : "opacity-30 text-slate-400"
+                  }`}
+                >
+                  {item.description}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          {/* Colonne de droite : Visuel Fixe (Sticky) */}
+          <div className="hidden md:block w-full md:w-1/2 sticky top-32">
+            <div className="w-full h-[450px] rounded-3xl overflow-hidden shadow-xl border border-slate-200/80 bg-slate-100 relative">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeSection}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 1.05 }}
+                  transition={{ duration: 0.4, ease: "easeInOut" }}
+                  className="absolute inset-0"
+                >
+                  {scrollContent[activeSection].content}
+                </motion.div>
+              </AnimatePresence>
+            </div>
           </div>
         </div>
 
         {/* 4. Accordion Gallery à la fin */}
-        <div className="mb-20">
-          <h2 className="text-2xl font-bold text-slate-900 mb-6">Galerie du projet</h2>
+        <div className="mb-10">
+          <h2 className="text-2xl font-bold text-slate-900 mb-2">Galerie du projet</h2>
+          <p className="text-slate-500 text-sm mb-6 font-light">Survolez les images pour les agrandir.</p>
           <AccordionGallery images={galleryImages} />
         </div>
       </div>
