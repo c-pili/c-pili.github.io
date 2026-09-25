@@ -42,7 +42,7 @@ export default function GantMagiquePage() {
       id: 2,
       name: "Matthieu",
       designation: "Software & Intégration GitHub",
-      image: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=200&auto=format&fit=crop",
+      image: "/IMG_Team.png",
     },
   ];
 
