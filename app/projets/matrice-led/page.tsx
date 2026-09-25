@@ -55,7 +55,7 @@ export default function MatriceLedPage() {
       content: (
         <img
           // Remplacez cette URL par votre propre image, ex: "/IMG_Altium.jpg"
-          src="/IMG_Gants-1.png"
+          src="/IMG_Matrice-1.png"
           alt="Routage Altium"
           className="h-full w-full object-cover"
         />
@@ -91,8 +91,8 @@ export default function MatriceLedPage() {
 
   // Images de la galerie
   const galleryImages = [
-    "https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=1000&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1000&auto=format&fit=crop",
+    "IMG_Matrice-1.png",
+    "IMG_Matrice-2.png",
     "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1000&auto=format&fit=crop",
   ];
 
