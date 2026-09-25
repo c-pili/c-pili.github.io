@@ -49,13 +49,16 @@ export default function MatriceLedPage() {
   // Le contenu du Sticky Scroll
   const scrollContent = [
     {
-      title: "Gestion de la Puissance",
+      title: "Synoptique",
       description:
         "Une matrice LED adressable consomme énormément de courant à pleine luminosité (jusqu'à 60mA par LED). Le défi matériel était de dimensionner l'alimentation et de concevoir un routage capable de distribuer cette puissance sans chute de tension.",
       content: (
-        <div className="h-full w-full bg-gradient-to-br from-purple-500 to-fuchsia-600 flex items-center justify-center text-white">
-          <span className="font-mono text-sm tracking-widest uppercase text-center px-4">Alimentation & Routage</span>
-        </div>
+        <img
+          // Remplacez cette URL par votre propre image, ex: "/IMG_Altium.jpg"
+          src="/IMG_Gants-1.png"
+          alt="Routage Altium"
+          className="h-full w-full object-cover"
+        />
       ),
     },
     {
@@ -63,9 +66,12 @@ export default function MatriceLedPage() {
       description:
         "Utilisation d'un microcontrôleur (ESP32) pour générer le signal de commande avec une précision à la microseconde. L'utilisation du DMA (Direct Memory Access) a permis d'envoyer les trames sans bloquer le processeur principal.",
       content: (
-        <div className="h-full w-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-white">
-          <span className="font-mono text-sm tracking-widest uppercase">ESP32 & DMA</span>
-        </div>
+        <img
+          // Remplacez cette URL par votre propre image, ex: "/IMG_ESP32.jpg"
+          src="/IMG_ESP32.jpg"
+          alt="ESP32"
+          className="h-full w-full object-cover"
+        />
       ),
     },
     {
@@ -73,9 +79,12 @@ export default function MatriceLedPage() {
       description:
         "Développement de programmes de rendu dynamique. Les coordonnées 2D (X, Y) sont traduites en un index 1D correspondant au câblage en serpentin de la matrice, permettant des animations fluides.",
       content: (
-        <div className="h-full w-full bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center text-white">
-          <span className="font-mono text-sm tracking-widest uppercase">Mapping 2D -&gt; 1D</span>
-        </div>
+        <img
+          // Remplacez cette URL par votre propre image, ex: "/IMG_Altium.jpg"
+          src="/IMG_Gants-1.png"
+          alt="Routage Altium"
+          className="h-full w-full object-cover"
+        />
       ),
     },
   ];
@@ -99,7 +108,7 @@ export default function MatriceLedPage() {
 
         {/* 1. Image Pixel Reveal en haut */}
         <PixelReveal 
-          src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=1000&auto=format&fit=crop" 
+          src="/IMG_MatriceLED.png" 
           alt="Matrice LED" 
         />
 
@@ -115,7 +124,7 @@ export default function MatriceLedPage() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-950"
             >
-              Matrice LED Adressable
+              Matrice LED
             </motion.h1>
           </div>
 
