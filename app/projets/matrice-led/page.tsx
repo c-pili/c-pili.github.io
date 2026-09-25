@@ -51,7 +51,7 @@ export default function MatriceLedPage() {
     {
       title: "Synoptique",
       description:
-        "Une matrice LED adressable consomme énormément de courant à pleine luminosité (jusqu'à 60mA par LED). Le défi matériel était de dimensionner l'alimentation et de concevoir un routage capable de distribuer cette puissance sans chute de tension.",
+        "Ce projet utilise un Arduino UNO pour le traitement des données, Ensuite, la commande est realisée par les modules 74HC238 et 74HC4094 pour piloter la matrice LED de 8x32. De plus un TinyRTC en entree de l'arduino communique l'heure en I2C",
       content: (
         <img
           // Remplacez cette URL par votre propre image, ex: "/IMG_Altium.jpg"
@@ -64,7 +64,7 @@ export default function MatriceLedPage() {
     {
       title: "Registres a Décalages",
       description:
-        "Utilisation d'un microcontrôleur (ESP32) pour générer le signal de commande avec une précision à la microseconde. L'utilisation du DMA (Direct Memory Access) a permis d'envoyer les trames sans bloquer le processeur principal.",
+        "Un registre a décalage est un système séquentiel qui permet d’enregistrer des bits et lorsqu’un nouveau arrive, il les décale de 1bits. Ça permet de déplacer bit a bit de la donnée dans un circuit numérique grâce à un ensemble de bascule synchrone. Les registres à décalage peuvent facilement être câblés en série tant qu’ils sont sur la même cadence.  La cadence de basculement est rythmée par un signal d’horloge.",
       content: (
         <img
           // Remplacez cette URL par votre propre image, ex: "/IMG_ESP32.jpg"
