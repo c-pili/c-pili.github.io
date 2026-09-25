@@ -38,7 +38,7 @@ export default function MatriceLedPage() {
       designation: "Conception Hardware & Code C++",
       image: "/profil.jpg",
     },
-        {
+    {
       id: 2,
       name: "Matthieu",
       designation: "Software & Intégration GitHub",
