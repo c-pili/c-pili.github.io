@@ -139,9 +139,9 @@ export default function GantMagiquePage() {
           {/* Colonne de gauche : Texte qui défile normalement avec la page */}
           <div className="w-full md:w-1/2 pb-32">
             <div className="mb-20">
-              <h2 className="text-2xl font-bold text-slate-900 mb-4">Architecture Technique</h2>
+              <h2 className="text-2xl font-bold text-slate-900 mb-4">Introduction</h2>
               <p className="text-slate-600 leading-relaxed">
-                Ce projet met en synergie la capture de mouvement et l&apos;électronique embarquée. Le défi principal consistait à miniaturiser l&apos;acquisition tout en garantissant un traitement du signal robuste en temps réel.
+                Le but de ce projet est de réaliser un montage électronique permettant d’actionner des actionneurs en fonction de l’angle de flexion de chaque doit récupérer grâce à des capteur de flexion cousue sur un gant. Le montage doit permettre pour chaque doigt de récupérer une tension proportionnelle à son angle de flexion. En comparant ces différentes tensions, une les RGB doit s’allumer. Ce système peut être utilisée dans l’industrie pour contrôler une main robotique en fonction de position des doigts
               </p>
             </div>
 
