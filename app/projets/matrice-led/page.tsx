@@ -205,7 +205,8 @@ export default function MatriceLedPage() {
               </p>
               <div className="flex gap-2">
                 <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-mono">C++</span>
-                <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-mono">ESP32</span>
+                <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-mono">Arduino UNO</span>
+                <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-mono">VS Code</span>
               </div>
             </motion.div>
 

@@ -42,7 +42,7 @@ export default function Home() {
                 < div className = "flex-1 space-y-6" >
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-200 bg-emerald-50/70 text-emerald-800 text-xs font-medium tracking-wide" >
                         <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-                            Disponible pour de nouveaux projets
+                            Recherche de Stage - Electronique de Labo
                                 </div>
 
                                 < h1 className = "text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-950 leading-[1.12]" >
