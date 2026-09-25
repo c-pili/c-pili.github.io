@@ -13,22 +13,22 @@ export default function Home() {
             title: "Gant Magique",
             src: "/IMG_GantsMag.jpg",
             href: "/projets/gant-magique",
-            category: "Systèmes Embarqués",
-            desc: "Dispositif à capteurs de flexion & centrale inertielle avec traitement temps réel.",
+            category: "Electronique",
+            desc: "Dispositif de traitement de capteurs de flexion et pilotage d'actionneur",
         },
         {
             title: "Matrice LED",
             src: "/IMG_MatriceLED.png",
             href: "/projets/matrice-led",
-            category: "Électronique & Routage",
-            desc: "Pilotage adressable haute fréquence et synchronisation d'effets visuels dynamiques.",
+            category: "Informatique",
+            desc: "Pilotage adressable haute fréquence et synchronisation d'effets visuels dynamiques",
         },
         {
             title: "Cellule Festo",
             src: "/IMG_CelluleFesto.png",
             href: "/projets/cellule-festo",
-            category: "Automatisme Industriel",
-            desc: "Banc pneumatique automatisé, programmation API et architecture Grafcet.",
+            category: "Automatisme",
+            desc: "Banc automatisé, programmation API et architecture Grafcet",
         },
     ];
 
