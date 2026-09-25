@@ -51,7 +51,7 @@ export default function GantMagiquePage() {
     {
       title: "Schémas Fonctionnels",
       description:
-        "Modélisation de l'architecture matérielle et routage des circuits imprimés sous Altium Designer pour intégrer les capteurs de flexion et la centrale inertielle de manière ergonomique.",
+        "Pour chaque doigts, Nous avons un montage soustracteur amplificateur propre a chaque doigts pour permettre d'adapter la tension proprtionnel en fonction de l'angle. Ensuite, suivant les doigts, nous utilisons des montages astables et de temporisation",
       content: (
         <img
           // Remplacez cette URL par votre propre image, ex: "/IMG_Altium.jpg"
@@ -64,7 +64,7 @@ export default function GantMagiquePage() {
     {
       title: "Etudes",
       description:
-        "Programmation bas niveau sur microcontrôleur (STM32 / ESP32) pour l'acquisition des données I2C/SPI. Utilisation de Matlab pour simuler et ajuster les filtres de traitement du signal.",
+        "Pour chaque doigts, ",
       content: (
         <img
           // Remplacez par votre photo Matlab/Code
