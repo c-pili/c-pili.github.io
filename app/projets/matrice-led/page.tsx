@@ -68,7 +68,7 @@ export default function MatriceLedPage() {
         "Développement de programmes de rendu dynamique. Les coordonnées 2D (X, Y) sont traduites en un index 1D correspondant au câblage en serpentin de la matrice, permettant des animations fluides.",
       content: (
         <div className="h-full w-full bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center text-white">
-          <span className="font-mono text-sm tracking-widest uppercase">Mapping 2D -> 1D</span>
+          <span className="font-mono text-sm tracking-widest uppercase">Mapping 2D -&gt; 1D</span>
         </div>
       ),
     },
