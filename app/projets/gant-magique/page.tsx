@@ -35,13 +35,13 @@ export default function GantMagiquePage() {
     {
       id: 1,
       name: "Clément",
-      designation: "Développement & Hardware",
+      designation: "Etudiant GEII",
       image: "/IMG_Profile.JPG",
     },
     {
       id: 2,
       name: "Matthieu",
-      designation: "Software & Intégration GitHub",
+      designation: "Etudiant GEII",
       image: "/IMG_Team.png",
     },
   ];
@@ -49,7 +49,7 @@ export default function GantMagiquePage() {
   // LE CHANGEMENT EST ICI : On utilise <img> au lieu de <div>
   const scrollContent = [
     {
-      title: "Conception & Routage",
+      title: "Schémas Fonctionnels",
       description:
         "Modélisation de l'architecture matérielle et routage des circuits imprimés sous Altium Designer pour intégrer les capteurs de flexion et la centrale inertielle de manière ergonomique.",
       content: (
@@ -62,26 +62,26 @@ export default function GantMagiquePage() {
       ),
     },
     {
-      title: "Acquisition & Traitement",
+      title: "Etudes",
       description:
         "Programmation bas niveau sur microcontrôleur (STM32 / ESP32) pour l'acquisition des données I2C/SPI. Utilisation de Matlab pour simuler et ajuster les filtres de traitement du signal.",
       content: (
         <img
           // Remplacez par votre photo Matlab/Code
-          src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1000&auto=format&fit=crop"
+          src="/IMG_Gants-2.png"
           alt="Firmware et Matlab"
           className="h-full w-full object-cover"
         />
       ),
     },
     {
-      title: "Collaboration & Versioning",
+      title: "Tests et Verifications",
       description:
         "Développement collaboratif avec une gestion de version stricte sous GitHub, assurant une intégration fluide des modules logiciels et une synchronisation parfaite entre les différentes cartes.",
       content: (
         <img
           // Remplacez par votre photo de GitHub / Équipe
-          src="https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?q=80&w=1000&auto=format&fit=crop"
+          src="/IMG_Gants-3.png"
           alt="GitHub et Versioning"
           className="h-full w-full object-cover"
         />

@@ -35,13 +35,13 @@ export default function MatriceLedPage() {
     {
       id: 1,
       name: "Clément",
-      designation: "Conception Hardware & Code C++",
+      designation: "Etudiant GEII",
       image: "/IMG_Profile.JPG",
     },
     {
       id: 2,
       name: "Matthieu",
-      designation: "Software & Intégration GitHub",
+      designation: "Etudiant GEII",
       image: "/IMG_Team.png",
     },
   ];
