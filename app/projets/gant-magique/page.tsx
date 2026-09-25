@@ -55,7 +55,7 @@ export default function GantMagiquePage() {
       content: (
         <img
           // Remplacez cette URL par votre propre image, ex: "/IMG_Altium.jpg"
-          src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1000&auto=format&fit=crop"
+          src="/IMG_Gants-1.png"
           alt="Routage Altium"
           className="h-full w-full object-cover"
         />
