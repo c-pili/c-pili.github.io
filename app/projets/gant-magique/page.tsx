@@ -34,7 +34,7 @@ export default function GantMagiquePage() {
   const team = [
     {
       id: 1,
-      name: "Clément PILI",
+      name: "Clément",
       designation: "Développement & Hardware",
       image: "/IMG_Profile.JPG",
     },
@@ -46,15 +46,19 @@ export default function GantMagiquePage() {
     },
   ];
 
+  // LE CHANGEMENT EST ICI : On utilise <img> au lieu de <div>
   const scrollContent = [
     {
       title: "Conception & Routage",
       description:
         "Modélisation de l'architecture matérielle et routage des circuits imprimés sous Altium Designer pour intégrer les capteurs de flexion et la centrale inertielle de manière ergonomique.",
       content: (
-        <div className="h-full w-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white">
-          <span className="font-mono text-sm tracking-widest uppercase">Hardware & Altium</span>
-        </div>
+        <img
+          // Remplacez cette URL par votre propre image, ex: "/IMG_Altium.jpg"
+          src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1000&auto=format&fit=crop"
+          alt="Routage Altium"
+          className="h-full w-full object-cover"
+        />
       ),
     },
     {
@@ -62,9 +66,12 @@ export default function GantMagiquePage() {
       description:
         "Programmation bas niveau sur microcontrôleur (STM32 / ESP32) pour l'acquisition des données I2C/SPI. Utilisation de Matlab pour simuler et ajuster les filtres de traitement du signal.",
       content: (
-        <div className="h-full w-full bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center text-white">
-          <span className="font-mono text-sm tracking-widest uppercase">Firmware & Matlab</span>
-        </div>
+        <img
+          // Remplacez par votre photo Matlab/Code
+          src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1000&auto=format&fit=crop"
+          alt="Firmware et Matlab"
+          className="h-full w-full object-cover"
+        />
       ),
     },
     {
@@ -72,9 +79,12 @@ export default function GantMagiquePage() {
       description:
         "Développement collaboratif avec une gestion de version stricte sous GitHub, assurant une intégration fluide des modules logiciels et une synchronisation parfaite entre les différentes cartes.",
       content: (
-        <div className="h-full w-full bg-gradient-to-br from-slate-700 to-slate-900 flex items-center justify-center text-white">
-          <span className="font-mono text-sm tracking-widest uppercase">Git & Déploiement</span>
-        </div>
+        <img
+          // Remplacez par votre photo de GitHub / Équipe
+          src="https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?q=80&w=1000&auto=format&fit=crop"
+          alt="GitHub et Versioning"
+          className="h-full w-full object-cover"
+        />
       ),
     },
   ];
@@ -157,6 +167,7 @@ export default function GantMagiquePage() {
 
           {/* Colonne de droite : Visuel Fixe (Sticky) */}
           <div className="hidden md:block w-full md:w-1/2 sticky top-32">
+            {/* L'image sera contenue dans ce cadre arrondi et prendra toute la place */}
             <div className="w-full h-[450px] rounded-3xl overflow-hidden shadow-xl border border-slate-200/80 bg-slate-100 relative">
               <AnimatePresence mode="wait">
                 <motion.div

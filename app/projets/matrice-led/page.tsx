@@ -34,7 +34,7 @@ export default function MatriceLedPage() {
   const team = [
     {
       id: 1,
-      name: "Clément PILI",
+      name: "Clément",
       designation: "Conception Hardware & Code C++",
       image: "/IMG_Profile.JPG",
     },
