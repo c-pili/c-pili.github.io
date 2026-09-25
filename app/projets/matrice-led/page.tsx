@@ -140,9 +140,9 @@ export default function MatriceLedPage() {
         <div className="mt-16 mb-20 flex flex-col md:flex-row items-start gap-12 relative">
           <div className="w-full md:w-1/2 pb-32">
             <div className="mb-20">
-              <h2 className="text-2xl font-bold text-slate-900 mb-4">Architecture Technique</h2>
+              <h2 className="text-2xl font-bold text-slate-900 mb-4">Introduction</h2>
               <p className="text-slate-600 leading-relaxed">
-                Ce projet a nécessité une double approche : une conception matérielle capable d'encaisser de forts appels de courant, et un code embarqué optimisé pour maintenir un framerate élevé sur un grand nombre de pixels.
+                Ce projet a pour but de commander un panneau LED, similaire à ceux utilisés dans les transports en commun (bus, tramway, gare, parking, …). L’objectif est de développer un système embarqué capable de récupérer l’heure en temps réel et de l’afficher sur la matrice LED. Ce type de panneau bien que monochrome est essentiel pour diffuser des informations en temps réel à faible coût
               </p>
             </div>
 
