@@ -48,7 +48,7 @@ export default function Home() {
                                 < h1 className = "text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-950 leading-[1.12]" >
                                     Clément PILI < br />
                                         <span className="text-slate-600 font-semibold text-2xl sm:text-3xl lg:text-4xl block mt-2" >
-                                            Concepteur Électronique & Développeur
+                                            Électronique & Systèmes Embarquées
                                                 </span>
                                                 </h1>
 
