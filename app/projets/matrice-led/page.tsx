@@ -62,26 +62,26 @@ export default function MatriceLedPage() {
       ),
     },
     {
-      title: "Microcontrôleur & Bus de données",
+      title: "Registres a Décalages",
       description:
         "Utilisation d'un microcontrôleur (ESP32) pour générer le signal de commande avec une précision à la microseconde. L'utilisation du DMA (Direct Memory Access) a permis d'envoyer les trames sans bloquer le processeur principal.",
       content: (
         <img
           // Remplacez cette URL par votre propre image, ex: "/IMG_ESP32.jpg"
-          src="/IMG_ESP32.jpg"
+          src="/IMG_Matrice-2.png"
           alt="ESP32"
           className="h-full w-full object-cover"
         />
       ),
     },
     {
-      title: "Algorithmes Visuels",
+      title: "Intégration TinyRTC",
       description:
         "Développement de programmes de rendu dynamique. Les coordonnées 2D (X, Y) sont traduites en un index 1D correspondant au câblage en serpentin de la matrice, permettant des animations fluides.",
       content: (
         <img
           // Remplacez cette URL par votre propre image, ex: "/IMG_Altium.jpg"
-          src="/IMG_Gants-1.png"
+          src="/IMG_Matrice-3.png"
           alt="Routage Altium"
           className="h-full w-full object-cover"
         />
@@ -91,9 +91,9 @@ export default function MatriceLedPage() {
 
   // Images de la galerie
   const galleryImages = [
-    "IMG_Matrice-1.png",
-    "IMG_Matrice-2.png",
-    "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1000&auto=format&fit=crop",
+    "/IMG_Matrice-1.png",
+    "/IMG_Matrice-2.png",
+    "/IMG_Matrice-3.png",
   ];
 
   return (
@@ -116,7 +116,7 @@ export default function MatriceLedPage() {
         <div className="mt-12 flex flex-col md:flex-row md:items-end justify-between gap-8 pb-10 border-b border-slate-200/70">
           <div>
             <span className="text-xs font-mono uppercase tracking-widest text-purple-600 font-semibold block mb-3">
-              Hardware & Développement C++
+              Développement C++
             </span>
             <motion.h1
               initial={{ opacity: 0, y: 10 }}
