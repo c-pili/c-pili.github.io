@@ -33,9 +33,15 @@ export default function CelluleFestoPage() {
   const team = [
     {
       id: 1,
-      name: "Clément PILI",
-      designation: "Automatisme, Grafcet & API",
-      image: "/profil.jpg",
+      name: "Clément",
+      designation: "Etudiant GEII",
+      image: "/IMG_Profile.JPG",
+    },
+    {
+      id: 2,
+      name: "Yliès",
+      designation: "Etudiant GEII",
+      image: "/IMG_Team.png",
     },
   ];
 
@@ -96,15 +102,15 @@ export default function CelluleFestoPage() {
 
         {/* 1. Nouvelle animation fluide d'image (Smooth Reveal) */}
         <SmoothImageReveal 
-          src="/IMG_CelluleFesto.jpg" 
-          alt="Cellule d'Automatisation Festo" 
+          src="/IMG_CelluleFesto.png" 
+          alt="Cellule Festo" 
         />
 
         {/* 2. Titre animé et Tooltip de l'équipe */}
         <div className="mt-12 flex flex-col md:flex-row md:items-end justify-between gap-8 pb-10 border-b border-slate-200/70">
           <div>
             <span className="text-xs font-mono uppercase tracking-widest text-emerald-600 font-semibold block mb-3">
-              Génie Électrique & Informatique Industrielle
+              Automatisme Industrielle
             </span>
             <motion.h1
               initial={{ opacity: 0, y: 10 }}
@@ -129,7 +135,7 @@ export default function CelluleFestoPage() {
           
           <div className="w-full md:w-1/2 pb-32">
             <div className="mb-20">
-              <h2 className="text-2xl font-bold text-slate-900 mb-4">Ingénierie Système</h2>
+              <h2 className="text-2xl font-bold text-slate-900 mb-4">Introduction</h2>
               <p className="text-slate-600 leading-relaxed">
                 Ce projet simule une ligne de production industrielle automatisée. L'objectif était de maîtriser l'ensemble de la chaîne d'action : depuis l'énergie pneumatique jusqu'à l'intelligence de commande de l'API.
               </p>
