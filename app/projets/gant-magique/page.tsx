@@ -64,7 +64,7 @@ export default function GantMagiquePage() {
     {
       title: "Etudes",
       description:
-        "Pour chaque doigts, ",
+        "Pour chaque doigts, nous allons calculer les resistances necessaires pour avoir un circuit conditionneur entre 0 et 10v lorsque le doigt est plié a 90°. Ensuite a l'aide de comparateur, comme la flexion est lineaire, on deduit nos seuils haut bas. Ensuite suivant les doigts on place un circuit monostable, astable ou une commande de transistor ",
       content: (
         <img
           // Remplacez par votre photo Matlab/Code
@@ -75,9 +75,9 @@ export default function GantMagiquePage() {
       ),
     },
     {
-      title: "Tests et Verifications",
+      title: "Réalisations et Verifications",
       description:
-        "Développement collaboratif avec une gestion de version stricte sous GitHub, assurant une intégration fluide des modules logiciels et une synchronisation parfaite entre les différentes cartes.",
+        "Apres la partie théorique, nous realisons sur une plaque LABDEC notre circuit pour realiser differents tests pour valider la bonne tension lorsque le doigts est plat. Tout ces tests sont relevées pour obtenir une erreur relative la plus proche",
       content: (
         <img
           // Remplacez par votre photo de GitHub / Équipe
