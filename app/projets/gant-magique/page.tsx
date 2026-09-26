@@ -113,7 +113,7 @@ export default function GantMagiquePage() {
         <div className="mt-12 flex flex-col md:flex-row md:items-end justify-between gap-8 pb-10 border-b border-slate-200/70">
           <div>
             <span className="text-xs font-mono uppercase tracking-widest text-blue-600 font-semibold block mb-3">
-              Projet de spécialité ESE
+              Projet d'Electronique
             </span>
             <motion.h1
               initial={{ opacity: 0, y: 10 }}
