@@ -71,18 +71,18 @@ export default function Home() {
         },
     ];
 
-    // Variantes d'animation pour l'apparition en cascade des projets
-    const containerVariants = {
+    // CORRECTION ICI : Utilisation de 'any' pour forcer TypeScript à valider l'animation
+    const containerVariants: any = {
         hidden: { opacity: 0 },
         show: {
             opacity: 1,
             transition: {
-                staggerChildren: 0.15, // Délai entre l'apparition de chaque carte
+                staggerChildren: 0.15,
             },
         },
     };
 
-    const itemVariants = {
+    const itemVariants: any = {
         hidden: { opacity: 0, y: 40 },
         show: {
             opacity: 1,
@@ -151,7 +151,7 @@ className = "h-full w-full object-cover"
     </div>
     </section>
 
-{/* 2. NOUVELLE SECTION : À propos de moi */ }
+{/* 2. SECTION : À propos de moi */ }
 <section className="max-w-5xl mx-auto px-6 py-20 border-t border-slate-200/60 overflow-hidden" >
     <div className="flex flex-col md:flex-row items-center gap-12" >
 
@@ -182,9 +182,8 @@ transition = {{ duration: 0.8, ease: "easeOut" }}
 className = "flex-1 w-full"
     >
     <div className="rounded-3xl overflow-hidden shadow-lg border border-slate-200/60 bg-slate-100 h-80 relative group" >
-    {/* Remplacez par une photo de vous en train de travailler ou autre */ }
-        < img
-src = "/IMG_Apropos.jpg"
+        <img 
+                src="/IMG_Apropos.jpg"
 onError = {(e) => {
     (e.target as HTMLElement).setAttribute("src", "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?q=80&w=1000&auto=format&fit=crop");
 }}
@@ -261,7 +260,7 @@ className = "p-6 rounded-2xl bg-[#FBFBFD] border border-slate-200/80 shadow-sm h
     </div>
     </motion.section>
 
-{/* 5. NOUVELLE SECTION : Photos d'activités (Apparition décalée) */ }
+{/* 5. SECTION : Photos d'activités */ }
 <section className="bg-white pb-20 border-b border-slate-200/60" >
     <div className="max-w-5xl mx-auto px-6" >
         <div className="flex flex-col md:flex-row gap-6" >
@@ -272,9 +271,8 @@ viewport = {{ once: true, margin: "-50px" }}
 transition = {{ duration: 0.6, ease: "easeOut" }}
 className = "flex-1 h-64 md:h-80 rounded-3xl overflow-hidden shadow-md group"
     >
-{/* Remplacez l'URL par une photo de vous (Aviron, Scoutisme...) */ }
-    < img
-src = "/IMG_Activite1.jpg"
+    <img 
+                src="/IMG_Activite1.jpg"
 onError = {(e) => {
     (e.target as HTMLElement).setAttribute("src", "https://images.unsplash.com/photo-1541847596045-865324d081b3?q=80&w=1000&auto=format&fit=crop");
 }}
@@ -290,9 +288,8 @@ viewport = {{ once: true, margin: "-50px" }}
 transition = {{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
 className = "flex-1 h-64 md:h-80 rounded-3xl overflow-hidden shadow-md group"
     >
-{/* Remplacez l'URL par une autre photo (Voile, Bateau...) */ }
-    < img
-src = "/IMG_Activite2.jpg"
+    <img 
+                src="/IMG_Activite2.jpg"
 onError = {(e) => {
     (e.target as HTMLElement).setAttribute("src", "https://images.unsplash.com/photo-1534066068225-b778759fb920?q=80&w=1000&auto=format&fit=crop");
 }}
