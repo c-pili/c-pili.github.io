@@ -42,7 +42,7 @@ export default function Home() {
                 < div className = "flex-1 space-y-6" >
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-200 bg-emerald-50/70 text-emerald-800 text-xs font-medium tracking-wide" >
                         <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-                            Recherche de Stage - Electronique de Labo
+                            Recherche de Stage - Laboratoire d'Electronique et de MicroElectroniques
                                 </div>
 
                                 < h1 className = "text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-950 leading-[1.12]" >
@@ -53,8 +53,7 @@ export default function Home() {
                                                 </h1>
 
                                                 < p className = "text-base sm:text-lg text-slate-600 max-w-xl leading-relaxed font-normal" >
-                                                    Passionné par la convergence entre matériel et logiciel: microcontrôleurs,
-                                                        systèmes communicants et interfaces utilisateurs soignées.
+                                                    Passionné par les systèmes necessitant de l'electronique embarquées et communicants 
             </p>
 
                                                             < div className = "flex items-center gap-4 pt-2" >
@@ -65,7 +64,7 @@ export default function Home() {
         Découvrir mes projets
             </Link>
             < Link
-    href = "/contact"
+    /*href = "/contact"*/
     className = "px-6 py-3 rounded-full border border-slate-200 bg-white text-slate-700 font-medium text-sm hover:bg-slate-50 transition active:scale-95 shadow-xs"
         >
         Prendre contact

@@ -34,6 +34,7 @@ export function BottomDock() {
       ),
     href: "https://github.com/c-pili",
     },
+    /*
 {
     title: "Contact",
         icon: (
@@ -41,6 +42,7 @@ export function BottomDock() {
       ),
     href: "/contact",
     },
+    */
   ];
 
 return (
