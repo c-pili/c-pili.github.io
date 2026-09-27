@@ -235,7 +235,7 @@ export default function MatriceLedPage() {
 {'    '}<span className="text-purple-400">if</span> (mySnakeGame.__Snake_running) window = mySnakeGame.__window;{'\n'}
 {'    '}<span className="text-purple-400">else</span> window = myMatrice.__MatriceLed;{'\n\n'}
 {'    '}<span className="text-purple-400">for</span> (<span className="text-blue-400">uint8_t</span> i = <span className="text-orange-300">0</span>; i &lt; <span className="text-orange-300">32</span>; i++) {'{\n'}
-{'        '}data_buffer[i] = ((window[i] &gt;&gt; ligneInProcesse) &amp; <span className="text-orange-300">1</span>) ^ <span className="text-orange-300">1</span>;<span className="text-slate-500">//inverse le bit</span>{'\n'}
+{'        '}data_buffer[i] = ((window[i] &gt;&gt; ligneInProcesse) &amp; <span className="text-orange-300">1</span>) ^ <span className="text-orange-300">1</span>;<span className="text-slate-500">//inv. bit</span>{'\n'}
 {'    }'}{'\n'}
 {'}'}{'\n\n'}
 <span className="text-blue-400">void</span> <span className="text-yellow-200">ShowLigne</span>() {'{\n'}

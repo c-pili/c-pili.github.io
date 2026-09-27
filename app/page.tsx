@@ -21,14 +21,14 @@ export default function Home() {
             src: "/IMG_MatriceLED.png",
             href: "/projets/matrice-led",
             category: "Informatique",
-            desc: "Pilotage adressable haute fréquence et synchronisation d'effets visuels dynamiques",
+            desc: "Programmation d'une Matrice LED avec un Arduino UNO",
         },
         {
             title: "Cellule Festo",
             src: "/IMG_CelluleFesto.png",
             href: "/projets/cellule-festo",
             category: "Automatisme",
-            desc: "Banc automatisé, programmation API et architecture Grafcet",
+            desc: "Réalisation d'un graph automatisee",
         },
     ];
 
