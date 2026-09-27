@@ -1,13 +1,16 @@
-"use client";
-
+import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
-import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React from "react";
 import { BottomDock } from "@/components/BottomDock";
+import { PageLoader } from "@/components/PageLoader";
 
-import type { Metadata } from "next";
+const font = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+});
 
+// Les balises SEO pour Google
 export const metadata: Metadata = {
   title: "Clément PILI | Ingénierie, Systèmes Embarqués & Web",
   description: "Portfolio de Clément PILI. Étudiant en Génie Électrique et Informatique Industrielle (GEII). Découvrez mes projets en systèmes embarqués, électronique et développement.",
@@ -22,70 +25,22 @@ export const metadata: Metadata = {
     description: "Conception matérielle et architectures logicielles modernes.",
     siteName: "Clément PILI Portfolio",
   },
-  verification: {
-    google: "CcibHALtcBpTLM5VpbHHn4KyQexIEnQzrXj7ujuK-pQ",
-  },
 };
-
-const font = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-});
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 400);
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
     <html lang="fr" className={font.className}>
       <body className="antialiased bg-[#FBFBFD] text-slate-900 selection:bg-blue-100 selection:text-blue-900 relative">
-        <AnimatePresence>
-          {loading && (
-            <motion.div
-              key="loader"
-              initial={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[#FBFBFD]/95 backdrop-blur-sm"
-            >
-              <div className="flex items-center space-x-2">
-                {[0, 1, 2].map((i) => (
-                  <motion.div
-                    key={i}
-                    className="h-3 w-3 rounded-full bg-blue-600"
-                    animate={{
-                      scale: [1, 1.4, 1],
-                      opacity: [0.3, 1, 0.3],
-                    }}
-                    transition={{
-                      duration: 0.8,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                      delay: i * 0.16,
-                    }}
-                  />
-                ))}
-              </div>
-              <p className="mt-4 text-xs font-mono tracking-widest text-slate-500 uppercase">
-                Chargement...
-              </p>
-            </motion.div>
-          )}
-        </AnimatePresence>
-
+        {/* Le loader gère lui-même son "use client" */}
+        <PageLoader />
+        
         {children}
 
-        {/* Le Dock flottant disponible sur toutes les pages */}
+        {/* Le dock flottant s'affiche sur chaque page */}
         <BottomDock />
       </body>
     </html>
