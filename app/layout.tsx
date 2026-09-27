@@ -6,6 +6,24 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { BottomDock } from "@/components/BottomDock";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Clément PILI | Ingénierie, Systèmes Embarqués & Web",
+  description: "Portfolio de Clément PILI. Étudiant en Génie Électrique et Informatique Industrielle (GEII). Découvrez mes projets en systèmes embarqués, électronique et développement.",
+  keywords: ["Clément PILI", "Portfolio", "Ingénieur", "Systèmes Embarqués", "Électronique", "Développeur", "GEII"],
+  authors: [{ name: "Clément PILI" }],
+  creator: "Clément PILI",
+  openGraph: {
+    type: "website",
+    locale: "fr_FR",
+    url: "https://c-pili.github.io",
+    title: "Clément PILI | Portfolio",
+    description: "Conception matérielle et architectures logicielles modernes.",
+    siteName: "Clément PILI Portfolio",
+  },
+};
+
 const font = Plus_Jakarta_Sans({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
