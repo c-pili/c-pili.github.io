@@ -36,7 +36,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="fr" className={`${font.className} scroll-smooth`}>
+        <html lang= "fr" className = {`${font.className} scroll-smooth`
+}>
       <body className="antialiased bg-[#FBFBFD] text-slate-900 selection:bg-blue-100 selection:text-blue-900 relative">
         {/* Le loader gère lui-même son "use client" */}
         <PageLoader />
@@ -46,6 +47,6 @@ export default function RootLayout({
         {/* Le dock flottant s'affiche sur chaque page */}
         <BottomDock />
       </body>
-    </>
+    </html>
   );
 }
