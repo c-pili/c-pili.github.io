@@ -47,7 +47,7 @@ export default function Home() {
             specialty: "Filière Scientifique / Technologique",
             school: "Lycée",
             desc: "Bases solides en sciences de l'ingénieur, mathématiques et physique-chimie.",
-        }
+        },
     ];
 
     const activities = [
@@ -60,29 +60,48 @@ export default function Home() {
         {
             title: "Scoutisme",
             role: "Chef Scout & Animateur",
-            desc: "Animation et encadrement de jeunes (Pionniers-Caravelles, 14-17 ans). Organisation de veillées, de débats et de projets de groupe. (BAFA obtenu).",
+            desc: "Animation et encadrement de jeunes (Pionniers-Caravelles, 14-17 ans). Organisation de veillées, de débats et de projets de groupe.",
             icon: "⛺",
         },
         {
             title: "Nautisme & Voile",
             role: "Passion & Co-navigation",
-            desc: "Grand intérêt pour la course au large (IMOCA, Vendée Globe, SailGP) et pratique de la co-navigation.",
+            desc: "Grand intérêt pour la course au large (IMOCA, Vendée Globe, SailGP) et pratique régulière de la co-navigation.",
             icon: "⛵",
-        }
+        },
     ];
 
-    return (
-        <main className= "min-h-screen bg-[#FBFBFD] text-slate-900 antialiased selection:bg-blue-100 selection:text-blue-900" >
+    // Variantes d'animation pour l'apparition en cascade des projets
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        show: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.15, // Délai entre l'apparition de chaque carte
+            },
+        },
+    };
 
-        {/* 1. Hero Section Épurée (Animée au chargement) */ }
+    const itemVariants = {
+        hidden: { opacity: 0, y: 40 },
+        show: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.7, ease: "easeOut" }
+        },
+    };
+
+    return (
+        <main className= "min-h-screen bg-[#FBFBFD] text-slate-900 antialiased selection:bg-blue-100 selection:text-blue-900 overflow-hidden" >
+
+        {/* 1. Hero Section Épurée */ }
         < section className = "max-w-5xl mx-auto px-6 pt-24 pb-20 md:pt-32 md:pb-24" >
             <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-10" >
 
-            {/* Texte de présentation */ }
-                < motion.div
-    initial = {{ opacity: 0, y: 20 }
+                <motion.div
+            initial={ { opacity: 0, y: 20 } }
+    animate = {{ opacity: 1, y: 0 }
 }
-animate = {{ opacity: 1, y: 0 }}
 transition = {{ duration: 0.7, ease: "easeOut" }}
 className = "flex-1 space-y-6"
     >
@@ -112,9 +131,8 @@ className = "px-6 py-3 rounded-full bg-slate-950 text-white font-medium text-sm 
         </div>
         </motion.div>
 
-{/* Photo de profil moderne */ }
-<motion.div 
-            initial={ { opacity: 0, scale: 0.9 } }
+        < motion.div
+initial = {{ opacity: 0, scale: 0.9 }}
 animate = {{ opacity: 1, scale: 1 }}
 transition = {{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
 className = "relative shrink-0 mx-auto md:mx-0"
@@ -133,10 +151,56 @@ className = "h-full w-full object-cover"
     </div>
     </section>
 
-{/* 2. Section Parcours Scolaire (Glissement depuis la gauche) */ }
-<motion.section 
-        initial={ { opacity: 0, x: -40 } }
+{/* 2. NOUVELLE SECTION : À propos de moi */ }
+<section className="max-w-5xl mx-auto px-6 py-20 border-t border-slate-200/60 overflow-hidden" >
+    <div className="flex flex-col md:flex-row items-center gap-12" >
+
+        <motion.div 
+            initial={ { opacity: 0, x: -40 } }
 whileInView = {{ opacity: 1, x: 0 }}
+viewport = {{ once: true, margin: "-100px" }}
+transition = {{ duration: 0.7, ease: "easeOut" }}
+className = "flex-1"
+    >
+    <span className="text-xs font-mono uppercase tracking-widest text-blue-600 font-semibold" > Présentation </span>
+        < h2 className = "text-3xl font-bold tracking-tight text-slate-950 mt-1 mb-6" > À propos de moi </h2>
+            < div className = "space-y-4 text-slate-600 leading-relaxed" >
+                <p>
+                Actuellement étudiant en deuxième année de BUT GEII à l'Université Savoie Mont Blanc, je me spécialise dans l'Électronique des Systèmes Embarqués(ESE).
+              </p>
+                    <p>
+                Mon approche associe la conception matérielle(schématiques, routage de PCB sur Altium Designer) et le développement logiciel(C, C++, Python, Qt) pour donner vie à des systèmes autonomes et intelligents.J'aime particulièrement relever des défis techniques qui lient l'électronique de précision au code embarqué.
+              </p>
+    </div>
+    </motion.div>
+
+    < motion.div
+initial = {{ opacity: 0, x: 40, filter: "blur(10px)" }}
+whileInView = {{ opacity: 1, x: 0, filter: "blur(0px)" }}
+viewport = {{ once: true, margin: "-100px" }}
+transition = {{ duration: 0.8, ease: "easeOut" }}
+className = "flex-1 w-full"
+    >
+    <div className="rounded-3xl overflow-hidden shadow-lg border border-slate-200/60 bg-slate-100 h-80 relative group" >
+    {/* Remplacez par une photo de vous en train de travailler ou autre */ }
+        < img
+src = "/IMG_Apropos.jpg"
+onError = {(e) => {
+    (e.target as HTMLElement).setAttribute("src", "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?q=80&w=1000&auto=format&fit=crop");
+}}
+alt = "Clément au travail"
+className = "w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+    />
+    </div>
+    </motion.div>
+
+    </div>
+    </section>
+
+{/* 3. Section Parcours Scolaire */ }
+<motion.section
+        initial={ { opacity: 0, y: 30 } }
+whileInView = {{ opacity: 1, y: 0 }}
 viewport = {{ once: true, margin: "-100px" }}
 transition = {{ duration: 0.7, ease: "easeOut" }}
 className = "max-w-5xl mx-auto px-6 py-20 border-t border-slate-200/60"
@@ -150,12 +214,12 @@ className = "max-w-5xl mx-auto px-6 py-20 border-t border-slate-200/60"
                 {
                     education.map((item, index) => (
                         <div key= { index } className = "relative" >
-                        {/* Point de la frise chronologique */ }
-                        < div className = "absolute -left-[41px] top-1.5 h-4 w-4 rounded-full bg-white border-4 border-blue-500 shadow-sm" />
-
-                        <div className="text-sm font-mono text-slate-500 mb-2" > { item.year } </div>
+                        <div className="absolute -left-[41px] top-1.5 h-4 w-4 rounded-full bg-white border-4 border-blue-500 shadow-sm" />
+                    <div className="text-sm font-mono text-slate-500 mb-2" > { item.year } </div>
                     < h3 className = "text-xl font-bold text-slate-900" > { item.degree } </h3>
-                    < h4 className = "text-base font-medium text-blue-600 mb-3" > { item.specialty } — { item.school } </h4>
+                    < h4 className = "text-base font-medium text-blue-600 mb-3" >
+                    { item.specialty } — { item.school }
+                    </h4>
                     < p className = "text-slate-600 max-w-2xl leading-relaxed" > { item.desc } </p>
                     </div>
                     ))
@@ -163,15 +227,15 @@ className = "max-w-5xl mx-auto px-6 py-20 border-t border-slate-200/60"
                     </div>
                     </motion.section>
 
-{/* 3. Section Activités (Apparition avec léger zoom depuis le bas) */ }
-<motion.section 
+{/* 4. Section Activités */ }
+<motion.section
         initial={ { opacity: 0, y: 40 } }
 whileInView = {{ opacity: 1, y: 0 }}
 viewport = {{ once: true, margin: "-100px" }}
 transition = {{ duration: 0.7, ease: "easeOut" }}
-className = "bg-white border-y border-slate-200/60"
+className = "bg-white border-t border-slate-200/60 pt-20 pb-12"
     >
-    <div className="max-w-5xl mx-auto px-6 py-20" >
+    <div className="max-w-5xl mx-auto px-6" >
         <div className="mb-12 text-center" >
             <span className="text-xs font-mono uppercase tracking-widest text-blue-600 font-semibold" > Extra - scolaire </span>
                 < h2 className = "text-3xl font-bold tracking-tight text-slate-950 mt-1" > Mes Activités </h2>
@@ -180,14 +244,16 @@ className = "bg-white border-y border-slate-200/60"
                     < div className = "grid grid-cols-1 md:grid-cols-3 gap-6" >
                     {
                         activities.map((act, index) => (
-                            <motion.div 
+                            <motion.div
                 key= { index }
                 whileHover = {{ y: -5 }}
 className = "p-6 rounded-2xl bg-[#FBFBFD] border border-slate-200/80 shadow-sm hover:shadow-md transition-all"
     >
     <div className="text-4xl mb-4" > { act.icon } </div>
         < h3 className = "text-lg font-bold text-slate-900" > { act.title } </h3>
-            < h4 className = "text-xs font-mono text-blue-600 mb-3 uppercase tracking-wider mt-1" > { act.role } </h4>
+            < h4 className = "text-xs font-mono text-blue-600 mb-3 uppercase tracking-wider mt-1" >
+            { act.role }
+                </h4>
                 < p className = "text-sm text-slate-600 leading-relaxed" > { act.desc } </p>
                     </motion.div>
             ))}
@@ -195,43 +261,89 @@ className = "p-6 rounded-2xl bg-[#FBFBFD] border border-slate-200/80 shadow-sm h
     </div>
     </motion.section>
 
-{/* 4. Section Projets (Fondu global) */ }
-<motion.section 
-        id="projets"
-initial = {{ opacity: 0 }}
-whileInView = {{ opacity: 1 }}
-viewport = {{ once: true, margin: "-100px" }}
-transition = {{ duration: 0.9, ease: "easeOut" }}
-className = "max-w-6xl mx-auto px-6 py-20"
+{/* 5. NOUVELLE SECTION : Photos d'activités (Apparition décalée) */ }
+<section className="bg-white pb-20 border-b border-slate-200/60" >
+    <div className="max-w-5xl mx-auto px-6" >
+        <div className="flex flex-col md:flex-row gap-6" >
+            <motion.div 
+              initial={ { opacity: 0, scale: 0.9, y: 30 } }
+whileInView = {{ opacity: 1, scale: 1, y: 0 }}
+viewport = {{ once: true, margin: "-50px" }}
+transition = {{ duration: 0.6, ease: "easeOut" }}
+className = "flex-1 h-64 md:h-80 rounded-3xl overflow-hidden shadow-md group"
     >
+{/* Remplacez l'URL par une photo de vous (Aviron, Scoutisme...) */ }
+    < img
+src = "/IMG_Activite1.jpg"
+onError = {(e) => {
+    (e.target as HTMLElement).setAttribute("src", "https://images.unsplash.com/photo-1541847596045-865324d081b3?q=80&w=1000&auto=format&fit=crop");
+}}
+alt = "Activité 1"
+className = "w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+    />
+    </motion.div>
+
+    < motion.div
+initial = {{ opacity: 0, scale: 0.9, y: 30 }}
+whileInView = {{ opacity: 1, scale: 1, y: 0 }}
+viewport = {{ once: true, margin: "-50px" }}
+transition = {{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+className = "flex-1 h-64 md:h-80 rounded-3xl overflow-hidden shadow-md group"
+    >
+{/* Remplacez l'URL par une autre photo (Voile, Bateau...) */ }
+    < img
+src = "/IMG_Activite2.jpg"
+onError = {(e) => {
+    (e.target as HTMLElement).setAttribute("src", "https://images.unsplash.com/photo-1534066068225-b778759fb920?q=80&w=1000&auto=format&fit=crop");
+}}
+alt = "Activité 2"
+className = "w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+    />
+    </motion.div>
+    </div>
+    </div>
+    </section>
+
+{/* 6. Section Projets (Animée en cascade / Stagger) */ }
+<section id="projets" className = "max-w-6xl mx-auto px-6 py-20" >
     <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-4" >
         <div>
-        <span className="text-xs font-mono uppercase tracking-widest text-blue-600 font-semibold" > Portfolio </span>
-            < h2 className = "text-3xl font-bold tracking-tight text-slate-950 mt-1" > Réalisations sélectionnées </h2>
-                </div>
-                < p className = "text-sm text-slate-500 max-w-xs font-light" >
-                    Cliquez sur un projet pour explorer son architecture technique et ses détails.
+        <span className="text-xs font-mono uppercase tracking-widest text-blue-600 font-semibold" >
+            Portfolio
+            </span>
+            < h2 className = "text-3xl font-bold tracking-tight text-slate-950 mt-1" >
+                Réalisations sélectionnées
+                    </h2>
+                    </div>
+                    < p className = "text-sm text-slate-500 max-w-xs font-light" >
+                        Cliquez sur un projet pour explorer son architecture technique et ses détails.
           </p>
-                        </div>
+                            </div>
 
-{/* Grille de cartes */ }
-<div className="grid grid-cols-1 md:grid-cols-3 gap-7" >
+{/* Grille de cartes gérée par Framer Motion pour l'apparition en cascade */ }
+<motion.div 
+          variants={ containerVariants }
+initial = "hidden"
+whileInView = "show"
+viewport = {{ once: true, margin: "-100px" }}
+className = "grid grid-cols-1 md:grid-cols-3 gap-7"
+    >
 {
     projects.map((project, index) => (
+        <motion.div variants= { itemVariants } key = { project.title } >
         <Link
-              key= { project.title }
-              href = { project.href }
-              onMouseEnter = {() => setHovered(index)}
+                href={ project.href }
+                onMouseEnter = {() => setHovered(index)}
 onMouseLeave = {() => setHovered(null)}
 className = {
     cn(
-                "group relative rounded-2xl overflow-hidden bg-white border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col",
+                  "group relative rounded-2xl overflow-hidden bg-white border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full",
         hovered !== null && hovered !== index && "opacity-60 scale-[0.99] filter blur-[0.5px]"
-              )}
-            >
+                )}
+              >
     <div className="h-60 w-full overflow-hidden bg-slate-100 relative" >
         <img
-                  src={ project.src }
+                    src={ project.src }
 alt = { project.title }
 className = "h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
     />
@@ -256,9 +368,10 @@ className = "h-full w-full object-cover group-hover:scale-105 transition-transfo
                                 </div>
                                 </div>
                                 </Link>
+                                </motion.div>
           ))}
-</div>
-    </motion.section>
+</motion.div>
+    </section>
 
 {/* Footer */ }
 <Footer />
