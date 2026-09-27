@@ -198,7 +198,7 @@ export default function MatriceLedPage() {
               </span>
               <h2 className="text-2xl font-bold text-slate-900 mb-4">Fonctions Principales</h2>
               <p className="text-slate-600 leading-relaxed mb-6">
-                Le cœur de l'affichage repose sur plusieurs fonctions que Matthieu a realisée dont <strong>GenerateBufferLed()</strong>. Voici un extrait du code C++ avec la fonction d'initialisation du buffer
+                Le cœur de l'affichage repose sur plusieurs fonctions que Matthieu a realisée dont <strong>GenerateBufferLed()</strong>. Voici un extrait du code C++ avec la fonction d'initialisation du buffer ainsi que l'affichage sur la matrice bit a bit
               </p>
               <div className="flex gap-2">
                 <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-mono">C++</span>
@@ -235,7 +235,7 @@ export default function MatriceLedPage() {
 {'    '}<span className="text-purple-400">if</span> (mySnakeGame.__Snake_running) window = mySnakeGame.__window;{'\n'}
 {'    '}<span className="text-purple-400">else</span> window = myMatrice.__MatriceLed;{'\n\n'}
 {'    '}<span className="text-purple-400">for</span> (<span className="text-blue-400">uint8_t</span> i = <span className="text-orange-300">0</span>; i &lt; <span className="text-orange-300">32</span>; i++) {'{\n'}
-{'        '}data_buffer[i] = ((window[i] &gt;&gt; ligneInProcesse) &amp; <span className="text-orange-300">1</span>) ^ <span className="text-orange-300">1</span>; <span className="text-slate-500">// Recupere le bit et l'inverse</span>{'\n'}
+{'        '}data_buffer[i] = ((window[i] &gt;&gt; ligneInProcesse) &amp; <span className="text-orange-300">1</span>) ^ <span className="text-orange-300">1</span>;<span className="text-slate-500">//inverse le bit</span>{'\n'}
 {'    }'}{'\n'}
 {'}'}{'\n\n'}
 <span className="text-blue-400">void</span> <span className="text-yellow-200">ShowLigne</span>() {'{\n'}
@@ -261,7 +261,7 @@ export default function MatriceLedPage() {
             className="mt-16 flex justify-center"
           >
             <Link 
-              href="https://github.com" // Remplacez avec votre lien de dépôt Github
+              href="https://github.com/MatthieuDeroo02/ProjetS2-MatriceLed" // Remplacez avec votre lien de dépôt Github
               target="_blank" 
               rel="noopener noreferrer"
             >
