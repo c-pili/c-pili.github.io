@@ -22,6 +22,9 @@ export const metadata: Metadata = {
     description: "Conception matérielle et architectures logicielles modernes.",
     siteName: "Clément PILI Portfolio",
   },
+  verification: {
+    google: "CcibHALtcBpTLM5VpbHHn4KyQexIEnQzrXj7ujuK-pQ",
+  },
 };
 
 const font = Plus_Jakarta_Sans({
