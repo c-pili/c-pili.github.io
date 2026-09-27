@@ -13,7 +13,7 @@ export function Footer() {
                         </span>
                         </div>
                         < p className = "text-sm text-neutral-400 max-w-sm leading-relaxed" >
-                            Ingénierie en systèmes embarqués, électronique et interfaces web modernes.
+                            Ingénierie en electronique et systèmes embarqués
           </p>
                                 < div className = "pt-2" >
                                     <a
@@ -36,9 +36,9 @@ export function Footer() {
                     < li >
                     <Link href="#projets" className = "hover:text-white transition" > Projets </Link>
                         </li>
-                        < li >
+                        < li >/*
                         <Link href="/contact" className = "hover:text-white transition" > Contact </Link>
-                            </li>
+                            </li>*/
                             </ul>
                             </div>
 
