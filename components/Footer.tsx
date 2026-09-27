@@ -36,9 +36,9 @@ export function Footer() {
                     < li >
                     <Link href="#projets" className = "hover:text-white transition" > Projets </Link>
                         </li>
-                        < li >/*
-                        <Link href="/contact" className = "hover:text-white transition" > Contact </Link>
-                            </li>*/
+                        < li >
+                        <//Link href="/contact" className = "hover:text-white transition" > Contact </Link>
+                            </li>
                             </ul>
                             </div>
 
