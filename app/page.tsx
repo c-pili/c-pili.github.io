@@ -65,7 +65,7 @@ export default function Home() {
             </Link>
             < Link
     //href = "/contact"
-    //className = "px-6 py-3 rounded-full border border-slate-200 bg-white text-slate-700 font-medium text-sm hover:bg-slate-50 transition active:scale-95 shadow-xs"
+    className = "px-6 py-3 rounded-full border border-slate-200 bg-white text-slate-700 font-medium text-sm hover:bg-slate-50 transition active:scale-95 shadow-xs"
         >
         Prendre contact
             </Link>

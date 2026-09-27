@@ -37,7 +37,7 @@ export function Footer() {
                     <Link href="#projets" className = "hover:text-white transition" > Projets </Link>
                         </li>
                         < li >
-                        <//Link href="/contact" className = "hover:text-white transition" > Contact </Link>
+                        <Link href="/contact" className = "hover:text-white transition" > </Link> {/* Contact */ }
                             </li>
                             </ul>
                             </div>
