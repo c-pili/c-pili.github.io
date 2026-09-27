@@ -191,7 +191,7 @@ className = "flex-1 h-72 md:h-96 rounded-3xl overflow-hidden shadow-md group rel
     >
 {/* REMARQUE : Placez une vidéo courte dans public/Video_Projet.mp4 */ }
     < video
-src = "/Video_Projet.mp4"
+src = "/VID_MAIN-2.mp4"
 autoPlay
 loop
 muted
