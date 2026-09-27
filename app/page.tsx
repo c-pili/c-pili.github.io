@@ -35,18 +35,25 @@ export default function Home() {
 
     const education = [
         {
-            year: "2024 - Présent",
+            year: "2025 - Présent",
             degree: "BUT Génie Électrique et Informatique Industrielle (GEII)",
             specialty: "Spécialité Électronique des Systèmes Embarqués (ESE)",
             school: "Université Savoie Mont Blanc",
             desc: "Formation approfondie en conception de cartes électroniques, programmation bas niveau, automatisme et traitement du signal.",
         },
         {
-            year: "Avant 2024",
-            degree: "Baccalauréat",
-            specialty: "Filière Scientifique / Technologique",
-            school: "Lycée",
-            desc: "Bases solides en sciences de l'ingénieur, mathématiques et physique-chimie.",
+            year: "2023 - 2025",
+            degree: "Baccalauréat Professionnel",
+            specialty: "Métiers de l'Electricité et de ses Environnements Connectés(MELEC)",
+            school: "Lycée CECAM",
+            desc: "Bases Professionnel en electricite et en energie",
+        },
+        {
+            year: "2021 - 2023",
+            degree: "Certificat d'Aptitudes Professionnel(CAP)",
+            specialty: "Remontées Mecaniques et Transports par Cables(TCRM)",
+            school: "Lycée des Métiers de la Montagne",
+            desc: "Bases solides en mécanique, en CAO, en energie et depannage",
         },
     ];
 
@@ -60,7 +67,7 @@ export default function Home() {
         {
             title: "Scoutisme",
             role: "Chef Scout & Animateur",
-            desc: "Animation et encadrement de jeunes (Pionniers-Caravelles, 14-17 ans). Organisation de veillées, de débats et de projets de groupe.",
+            desc: "Animation et encadrement de jeunes. Organisation avec",
             icon: "⛺",
         },
         {
