@@ -33,52 +33,7 @@ export default function Home() {
         },
     ];
 
-    const education = [
-        {
-            year: "2025 - Présent",
-            degree: "BUT Génie Électrique et Informatique Industrielle (GEII)",
-            specialty: "Spécialité Électronique des Systèmes Embarqués (ESE)",
-            school: "Université Savoie Mont Blanc",
-            desc: "Formation approfondie en conception de cartes électroniques, programmation bas niveau, automatisme et traitement du signal.",
-        },
-        {
-            year: "2023 - 2025",
-            degree: "Baccalauréat Professionnel",
-            specialty: "Métiers de l'Electricité et de ses Environnements Connectés(MELEC)",
-            school: "Lycée CECAM",
-            desc: "Bases Professionnel en electricite et en energie",
-        },
-        {
-            year: "2021 - 2023",
-            degree: "Certificat d'Aptitudes Professionnel(CAP)",
-            specialty: "Remontées Mecaniques et Transports par Cables(TCRM)",
-            school: "Lycée des Métiers de la Montagne",
-            desc: "Bases solides en mécanique, en CAO, en energie et depannage",
-        },
-    ];
-
-    const activities = [
-        {
-            title: "Aviron",
-            role: "Pratique sportive",
-            desc: "Esprit d'équipe, rigueur et dépassement de soi lors des entraînements et compétitions sur l'eau.",
-            icon: "🚣",
-        },
-        {
-            title: "Scoutisme",
-            role: "Chef Scout & Animateur",
-            desc: "Animation et encadrement de jeunes. Organisation avec",
-            icon: "⛺",
-        },
-        {
-            title: "Nautisme & Voile",
-            role: "Passion & Co-navigation",
-            desc: "Grand intérêt pour la course au large (IMOCA, Vendée Globe, SailGP) et pratique régulière de la co-navigation.",
-            icon: "⛵",
-        },
-    ];
-
-    // CORRECTION ICI : Utilisation de 'any' pour forcer TypeScript à valider l'animation
+    // Animation pour l'apparition en cascade des projets
     const containerVariants: any = {
         hidden: { opacity: 0 },
         show: {
@@ -203,113 +158,58 @@ className = "w-full h-full object-cover transition-transform duration-700 group-
     </div>
     </section>
 
-{/* 3. Section Parcours Scolaire */ }
-<motion.section
-        initial={ { opacity: 0, y: 30 } }
-whileInView = {{ opacity: 1, y: 0 }}
-viewport = {{ once: true, margin: "-100px" }}
-transition = {{ duration: 0.7, ease: "easeOut" }}
-className = "max-w-5xl mx-auto px-6 py-20 border-t border-slate-200/60"
-    >
-    <div className="mb-12" >
-        <span className="text-xs font-mono uppercase tracking-widest text-blue-600 font-semibold" > Formation </span>
-            < h2 className = "text-3xl font-bold tracking-tight text-slate-950 mt-1" > Parcours Scolaire </h2>
-                </div>
-
-                < div className = "space-y-12 border-l-2 border-slate-200 ml-3 pl-8 relative" >
-                {
-                    education.map((item, index) => (
-                        <div key= { index } className = "relative" >
-                        <div className="absolute -left-[41px] top-1.5 h-4 w-4 rounded-full bg-white border-4 border-blue-500 shadow-sm" />
-                    <div className="text-sm font-mono text-slate-500 mb-2" > { item.year } </div>
-                    < h3 className = "text-xl font-bold text-slate-900" > { item.degree } </h3>
-                    < h4 className = "text-base font-medium text-blue-600 mb-3" >
-                    { item.specialty } — { item.school }
-                    </h4>
-                    < p className = "text-slate-600 max-w-2xl leading-relaxed" > { item.desc } </p>
-                    </div>
-                    ))
-                }
-                    </div>
-                    </motion.section>
-
-{/* 4. Section Activités */ }
-<motion.section
-        initial={ { opacity: 0, y: 40 } }
-whileInView = {{ opacity: 1, y: 0 }}
-viewport = {{ once: true, margin: "-100px" }}
-transition = {{ duration: 0.7, ease: "easeOut" }}
-className = "bg-white border-t border-slate-200/60 pt-20 pb-12"
-    >
-    <div className="max-w-5xl mx-auto px-6" >
-        <div className="mb-12 text-center" >
-            <span className="text-xs font-mono uppercase tracking-widest text-blue-600 font-semibold" > Extra - scolaire </span>
-                < h2 className = "text-3xl font-bold tracking-tight text-slate-950 mt-1" > Mes Activités </h2>
-                    </div>
-
-                    < div className = "grid grid-cols-1 md:grid-cols-3 gap-6" >
-                    {
-                        activities.map((act, index) => (
-                            <motion.div
-                key= { index }
-                whileHover = {{ y: -5 }}
-className = "p-6 rounded-2xl bg-[#FBFBFD] border border-slate-200/80 shadow-sm hover:shadow-md transition-all"
-    >
-    <div className="text-4xl mb-4" > { act.icon } </div>
-        < h3 className = "text-lg font-bold text-slate-900" > { act.title } </h3>
-            < h4 className = "text-xs font-mono text-blue-600 mb-3 uppercase tracking-wider mt-1" >
-            { act.role }
-                </h4>
-                < p className = "text-sm text-slate-600 leading-relaxed" > { act.desc } </p>
-                    </motion.div>
-            ))}
-</div>
-    </div>
-    </motion.section>
-
-{/* 5. SECTION : Photos d'activités */ }
-<section className="bg-white pb-20 border-b border-slate-200/60" >
+{/* 3. SECTION : Médias (Photo & Vidéo) juste avant les projets */ }
+<section className="bg-white py-20 border-y border-slate-200/60" >
     <div className="max-w-5xl mx-auto px-6" >
         <div className="flex flex-col md:flex-row gap-6" >
-            <motion.div 
-              initial={ { opacity: 0, scale: 0.9, y: 30 } }
-whileInView = {{ opacity: 1, scale: 1, y: 0 }}
-viewport = {{ once: true, margin: "-50px" }}
-transition = {{ duration: 0.6, ease: "easeOut" }}
-className = "flex-1 h-64 md:h-80 rounded-3xl overflow-hidden shadow-md group"
-    >
-    <img 
-                src="/IMG_Activite1.jpg"
-onError = {(e) => {
-    (e.target as HTMLElement).setAttribute("src", "https://images.unsplash.com/photo-1541847596045-865324d081b3?q=80&w=1000&auto=format&fit=crop");
-}}
-alt = "Activité 1"
-className = "w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
-    />
-    </motion.div>
 
-    < motion.div
+        {/* Une belle photo d'action / de projet */ }
+            < motion.div
 initial = {{ opacity: 0, scale: 0.9, y: 30 }}
 whileInView = {{ opacity: 1, scale: 1, y: 0 }}
 viewport = {{ once: true, margin: "-50px" }}
-transition = {{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-className = "flex-1 h-64 md:h-80 rounded-3xl overflow-hidden shadow-md group"
+transition = {{ duration: 0.6, ease: "easeOut" }}
+className = "flex-1 h-72 md:h-96 rounded-3xl overflow-hidden shadow-md group relative bg-slate-100"
     >
     <img 
-                src="/IMG_Activite2.jpg"
+                src="/IMG_Action.jpg"
 onError = {(e) => {
-    (e.target as HTMLElement).setAttribute("src", "https://images.unsplash.com/photo-1534066068225-b778759fb920?q=80&w=1000&auto=format&fit=crop");
+    (e.target as HTMLElement).setAttribute("src", "https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=1000&auto=format&fit=crop");
 }}
-alt = "Activité 2"
-className = "w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+alt = "En pleine conception"
+className = "w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
     />
     </motion.div>
-    </div>
-    </div>
-    </section>
 
-{/* 6. Section Projets (Animée en cascade / Stagger) */ }
-<section id="projets" className = "max-w-6xl mx-auto px-6 py-20" >
+{/* Un lecteur Vidéo fluide et muet (style background dynamique) */ }
+<motion.div 
+              initial={ { opacity: 0, scale: 0.9, y: 30 } }
+whileInView = {{ opacity: 1, scale: 1, y: 0 }}
+viewport = {{ once: true, margin: "-50px" }}
+transition = {{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+className = "flex-1 h-72 md:h-96 rounded-3xl overflow-hidden shadow-md group relative bg-slate-900 border border-slate-800"
+    >
+{/* REMARQUE : Placez une vidéo courte dans public/Video_Projet.mp4 */ }
+    < video
+src = "/Video_Projet.mp4"
+autoPlay
+loop
+muted
+playsInline
+className = "w-full h-full object-cover opacity-90 transition-opacity duration-700 group-hover:opacity-100"
+    />
+{/* Si la vidéo n'est pas trouvée, un message subtil s'affiche derrière */ }
+    < div className = "absolute inset-0 -z-10 flex items-center justify-center text-slate-500 text-sm font-mono" >
+        Vidéo introuvable
+            </div>
+            </motion.div>
+
+            </div>
+            </div>
+            </section>
+
+{/* 4. Section Projets (Animée en cascade / Stagger) */ }
+<section id="projets" className = "max-w-6xl mx-auto px-6 py-24" >
     <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-4" >
         <div>
         <span className="text-xs font-mono uppercase tracking-widest text-blue-600 font-semibold" >
