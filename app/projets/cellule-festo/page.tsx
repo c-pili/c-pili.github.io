@@ -47,31 +47,31 @@ export default function CelluleFestoPage() {
 
   const scrollContent = [
     {
-      title: "Pneumatique & Mécanique",
+      title: "Conceptions",
       description:
         "Analyse et câblage de la partie opérative de la cellule. Intégration des vérins, des distributeurs pneumatiques et des préhenseurs nécessaires au transfert et au tri sélectif des pièces industrielles.",
       content: (
         <img
-          src="https://images.unsplash.com/photo-1565514020179-026b92b84bb6?q=80&w=1000&auto=format&fit=crop"
+          src="/IMG_Cellule-1.png"
           alt="Système mécanique"
           className="h-full w-full object-cover"
         />
       ),
     },
     {
-      title: "Modélisation Grafcet",
+      title: "Optimisations et Tests",
       description:
         "Élaboration rigoureuse de la logique séquentielle via le Grafcet (Graphe de Commande Étape-Transition). Gestion intégrale des modes de marche (automatique, cycle par cycle, manuel) et sécurisation du système (arrêts d'urgence).",
       content: (
         <img
-          src="https://images.unsplash.com/photo-1580983554869-906969562768?q=80&w=1000&auto=format&fit=crop"
+          src="/IMG_Cellule-2.png"
           alt="Logique et automatisation"
           className="h-full w-full object-cover"
         />
       ),
     },
     {
-      title: "Programmation API",
+      title: "Passage en Sémaphore",
       description:
         "Traduction de la modélisation en langage automate (Ladder/ST) pour piloter l'Automate Programmable Industriel (API). Intégration en temps réel des retours d'information des capteurs inductifs et optiques.",
       content: (
@@ -123,7 +123,7 @@ export default function CelluleFestoPage() {
           </div>
 
           <div className="flex flex-col items-start md:items-end gap-3">
-            <span className="text-xs font-mono text-slate-500 uppercase tracking-wider">Responsable</span>
+            <span className="text-xs font-mono text-slate-500 uppercase tracking-wider">Equipe de Projet</span>
             <div className="flex flex-row items-center">
               <AnimatedTooltip items={team} />
             </div>

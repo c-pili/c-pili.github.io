@@ -129,7 +129,7 @@ export default function MatriceLedPage() {
           </div>
 
           <div className="flex flex-col items-start md:items-end gap-3">
-            <span className="text-xs font-mono text-slate-500 uppercase tracking-wider">Créateur</span>
+            <span className="text-xs font-mono text-slate-500 uppercase tracking-wider">Equipe de Projet</span>
             <div className="flex flex-row items-center">
               <AnimatedTooltip items={team} />
             </div>
