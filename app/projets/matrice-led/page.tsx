@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { Footer } from "@/components/Footer";
 import { AnimatedTooltip } from "@/components/ui/animated-tooltip";
-import { SmoothImageReveal } from "@/components/ui/smooth-image-reveal"; // <-- Remplacé
+import { SmoothImageReveal } from "@/components/ui/smooth-image-reveal";
 import { AccordionGallery } from "@/components/ui/accordion-gallery";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -217,7 +217,7 @@ className = "lg:w-1/3"
                                         </div>
                                         </motion.div>
 
-{/* Éditeur de Code Animé */ }
+{/* Éditeur de Code Animé - Version sécurisée pour Turbopack */ }
 <motion.div
               initial={ { opacity: 0, x: 40, scale: 0.95 } }
 whileInView = {{ opacity: 1, x: 0, scale: 1 }}
@@ -239,22 +239,58 @@ className = "lg:w-2/3 w-full rounded-xl bg-[#0d1117] border border-slate-700 sha
 <div className="p-5 overflow-x-auto" >
     <pre className="text-sm font-mono leading-relaxed text-slate-300" >
         <code>
-        <span className="text-blue-400" > void</span> <span className="text-yellow-200">GenerateBufferLed</span > () { '{\n' }
-{ '    ' } <span className="text-blue-400" > uint8_t </span> *window;{'\n'}
-{ '    ' } <span className="text-purple-400" >if</span> (mySnakeGame.__Snake_running) window = mySnakeGame.__window;{'\n'}
-{ '    ' } <span className="text-purple-400" >else </span> window = myMatrice.__MatriceLed;{'\n\n'}
-{ '    ' } <span className="text-purple-400" >for</span> (<span className="text-blue-400">uint8_t</span > i = <span className= "text-orange-300" > 0 < /span>; i &lt; <span className="text-orange-300">32</span >; i++) { '{\n' }
-{ '        ' } data_buffer[i] = ((window[i] & gt;& gt; ligneInProcesse) & amp; <span className="text-orange-300" > 1 < /span>) ^ <span className="text-orange-300">1</span >; <span className="text-slate-500" >// inversion bit</span>{'\n'}
-{ '    }'}{ '\n' }
-{ '}' } { '\n\n' }
-<span className="text-blue-400" > void</span> <span className="text-yellow-200">ShowLigne</span > () { '{\n' }
-{ '    ' } <span className="text-slate-500" >/* Éteint la matrice */ </span>{'\n'}
-{ '    ' } PORTC & amp;= ~(<span className="text-orange-300" > 1 </span>&lt;&lt;CS1_PIN); { '\n\n' }
-{ '    ' } <span className="text-slate-500" >/* Envoie la ligne */ </span>{'\n'}
-{ '    ' } PORTC = (PORTC & amp; ~(<span className="text-orange-300" > 1 < /span>&lt;&lt;ALO_PIN)) | (((ligneInProcesse &gt;&gt; BIT0) &amp; <span className="text-orange-300">1</span >) & lt;& lt; ALO_PIN); { '\n' }
-{ '    ' } PORTC = (PORTC & amp; ~(<span className="text-orange-300" > 1 < /span>&lt;&lt;AL1_PIN)) | (((ligneInProcesse &gt;&gt; BIT1) &amp; <span className="text-orange-300">1</span >) & lt;& lt; AL1_PIN); { '\n' }
-{ '    ' } PORTC = (PORTC & amp; ~(<span className="text-orange-300" > 1 < /span>&lt;&lt;AL2_PIN)) | (((ligneInProcesse &gt;&gt; BIT2) &amp; <span className="text-orange-300">1</span >) & lt;& lt; AL2_PIN); { '\n' }
-{ '}' }
+        <span className="text-blue-400" > { "void "} </span>
+            < span className = "text-yellow-200" > { "GenerateBufferLed"} </span>
+{ "() {\n" }
+{ "    " }
+<span className="text-blue-400" > { "uint8_t "} </span>
+{ "*window;\n" }
+{ "    " }
+<span className="text-purple-400" > { "if "} </span>
+{ "(mySnakeGame.__Snake_running) window = mySnakeGame.__window;\n" }
+{ "    " }
+<span className="text-purple-400" > { "else "} </span>
+{ "window = myMatrice.__MatriceLed;\n\n" }
+{ "    " }
+<span className="text-purple-400" > { "for "} </span>
+{ "(" }
+<span className="text-blue-400" > { "uint8_t "} </span>
+{ "i = " }
+<span className="text-orange-300" > { "0"} </span>
+{ "; i < " }
+<span className="text-orange-300" > { "32"} </span>
+{ "; i++) {\n" }
+{ "        data_buffer[i] = ((window[i] >> ligneInProcesse) & " }
+<span className="text-orange-300" > { "1"} </span>
+{ ") ^ " }
+<span className="text-orange-300" > { "1"} </span>
+{ "; " }
+<span className="text-slate-500" > { "// inversion bit\n"} </span>
+{ "    }\n}\n\n" }
+
+<span className="text-blue-400" > { "void "} </span>
+    < span className = "text-yellow-200" > { "ShowLigne"} </span>
+{ "() {\n    " }
+<span className="text-slate-500" > { "/* Éteint la matrice */\n"} </span>
+{ "    PORTC &= ~(" }
+<span className="text-orange-300" > { "1"} </span>
+{ " << CS1_PIN);\n\n    " }
+<span className="text-slate-500" > { "/* Envoie la ligne */\n"} </span>
+{ "    PORTC = (PORTC & ~(" }
+<span className="text-orange-300" > { "1"} </span>
+{ " << ALO_PIN)) | (((ligneInProcesse >> BIT0) & " }
+<span className="text-orange-300" > { "1"} </span>
+{ ") << ALO_PIN);\n" }
+{ "    PORTC = (PORTC & ~(" }
+<span className="text-orange-300" > { "1"} </span>
+{ " << AL1_PIN)) | (((ligneInProcesse >> BIT1) & " }
+<span className="text-orange-300" > { "1"} </span>
+{ ") << AL1_PIN);\n" }
+{ "    PORTC = (PORTC & ~(" }
+<span className="text-orange-300" > { "1"} </span>
+{ " << AL2_PIN)) | (((ligneInProcesse >> BIT2) & " }
+<span className="text-orange-300" > { "1"} </span>
+{ ") << AL2_PIN);\n}" }
 </code>
     </pre>
     </div>
