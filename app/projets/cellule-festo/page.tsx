@@ -49,7 +49,7 @@ export default function CelluleFestoPage() {
     {
       title: "Conceptions",
       description:
-        "Analyse et câblage de la partie opérative de la cellule. Intégration des vérins, des distributeurs pneumatiques et des préhenseurs nécessaires au transfert et au tri sélectif des pièces industrielles.",
+        "Analyses des differents cahiers de charges et dessin des premiers schémas partie par partie.Realisation des premiers graphes SFC avec Schneider EcoXtructure en ajoutant les entrée/sorties de l'API.",
       content: (
         <img
           src="/IMG_Cellule-1.png"
@@ -61,7 +61,7 @@ export default function CelluleFestoPage() {
     {
       title: "Optimisations et Tests",
       description:
-        "Élaboration rigoureuse de la logique séquentielle via le Grafcet (Graphe de Commande Étape-Transition). Gestion intégrale des modes de marche (automatique, cycle par cycle, manuel) et sécurisation du système (arrêts d'urgence).",
+        "Élaboration des premiers tests pour validation des graphes realisée partie par partie de la cellule. Optimisation du grpahe et amelioration du cahier des charges en prenant compte des couleurs/materiaux des differentes pieces et des erreurs de production",
       content: (
         <img
           src="/IMG_Cellule-2.png"
@@ -76,7 +76,7 @@ export default function CelluleFestoPage() {
         "Traduction de la modélisation en langage automate (Ladder/ST) pour piloter l'Automate Programmable Industriel (API). Intégration en temps réel des retours d'information des capteurs inductifs et optiques.",
       content: (
         <img
-          src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?q=80&w=1000&auto=format&fit=crop"
+          src="/IMG_Cellule-3.png"
           alt="Programmation API"
           className="h-full w-full object-cover"
         />
@@ -85,9 +85,10 @@ export default function CelluleFestoPage() {
   ];
 
   const galleryImages = [
-    "/IMG_CelluleFesto.jpg", // Remplacez par votre vraie photo
-    "https://images.unsplash.com/photo-1565514020179-026b92b84bb6?q=80&w=1000&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1580983554869-906969562768?q=80&w=1000&auto=format&fit=crop",
+    "/IMG_CelluleFesto.png", // Remplacez par votre vraie photo
+    "/IMG_Cellule-1.png",
+    "/IMG_Cellule-2.png",
+    "/IMG_Cellule-3.png",
   ];
 
   return (
