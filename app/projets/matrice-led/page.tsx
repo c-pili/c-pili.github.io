@@ -54,7 +54,6 @@ export default function MatriceLedPage() {
         "Ce projet utilise un Arduino UNO pour le traitement des données, Ensuite, la commande est realisée par les modules 74HC238 et 74HC4094 pour piloter la matrice LED de 8x32. De plus un TinyRTC en entree de l'arduino communique l'heure en I2C",
       content: (
         <img
-          // Remplacez cette URL par votre propre image, ex: "/IMG_Altium.jpg"
           src="/IMG_Matrice-1.png"
           alt="Routage Altium"
           className="h-full w-full object-cover"
@@ -67,7 +66,6 @@ export default function MatriceLedPage() {
         "Un registre a décalage est un système séquentiel qui permet d’enregistrer des bits et lorsqu’un nouveau arrive, il les décale de 1bits. Ça permet de déplacer bit a bit de la donnée dans un circuit numérique grâce à un ensemble de bascule synchrone. Les registres à décalage peuvent facilement être câblés en série tant qu’ils sont sur la même cadence.  La cadence de basculement est rythmée par un signal d’horloge",
       content: (
         <img
-          // Remplacez cette URL par votre propre image, ex: "/IMG_ESP32.jpg"
           src="/IMG_Matrice-2.png"
           alt="ESP32"
           className="h-full w-full object-cover"
@@ -80,7 +78,6 @@ export default function MatriceLedPage() {
         "Le module TinyRTC Comprend un DS1307 (Horloge temps réel (RTC) avec interface I2C), 24C32 (EEPROM 32kBits (non utilisé dans le Snake). Il est alimenté par une pile, ce qui permet de conserver l’heure même lorsque la carte Arduino n’est pas alimentée. Cela évite de devoir ressaisir l’heure à chaque fois que on rallume le système",
       content: (
         <img
-          // Remplacez cette URL par votre propre image, ex: "/IMG_Altium.jpg"
           src="/IMG_Matrice-3.png"
           alt="Routage Altium"
           className="h-full w-full object-cover"
@@ -199,14 +196,15 @@ export default function MatriceLedPage() {
               <span className="text-xs font-mono uppercase tracking-widest text-purple-600 font-semibold block mb-3">
                 Implémentation
               </span>
-              <h2 className="text-2xl font-bold text-slate-900 mb-4">Bibliothèque FastLED</h2>
+              <h2 className="text-2xl font-bold text-slate-900 mb-4">Fonctions Principales</h2>
               <p className="text-slate-600 leading-relaxed mb-6">
-                Le cœur de l'animation repose sur la célèbre bibliothèque <strong>FastLED</strong>. Voici un extrait du code C++ permettant d'initialiser le ruban WS2812B et de générer un effet visuel de spectre arc-en-ciel dynamique sans saturer la mémoire du microcontrôleur.
+                Le cœur de l'affichage repose sur plusieurs fonctions que Matthieu a realisée dont <strong>GenerateBufferLed()</strong>. Voici un extrait du code C++ avec la fonction d'initialisation du buffer
               </p>
               <div className="flex gap-2">
                 <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-mono">C++</span>
                 <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-mono">Arduino UNO</span>
                 <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-mono">VS Code</span>
+                <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-mono">Github</span>
               </div>
             </motion.div>
 
@@ -232,24 +230,53 @@ export default function MatriceLedPage() {
               <div className="p-5 overflow-x-auto">
                 <pre className="text-sm font-mono leading-relaxed text-slate-300">
                   <code>
-<span className="text-purple-400">#include</span> <span className="text-green-300">&lt;FastLED.h&gt;</span><br/><br/>
-<span className="text-purple-400">#define</span> NUM_LEDS <span className="text-orange-300">256</span><br/>
-<span className="text-purple-400">#define</span> DATA_PIN <span className="text-orange-300">3</span><br/><br/>
-<span className="text-yellow-200">CRGB</span> leds[NUM_LEDS];<br/><br/>
-<span className="text-blue-400">void</span> <span className="text-yellow-200">setup</span>() {'{'}<br/>
-{'  '}FastLED.<span className="text-blue-300">addLeds</span>&lt;WS2812B, DATA_PIN, GRB&gt;(leds, NUM_LEDS);<br/>
-{'  '}FastLED.<span className="text-blue-300">setBrightness</span>(<span className="text-orange-300">50</span>);<br/>
-{'}'}<br/><br/>
-<span className="text-blue-400">void</span> <span className="text-yellow-200">loop</span>() {'{'}<br/>
-{'  '}<span className="text-slate-500">// Effet arc-en-ciel tournant fluide</span><br/>
-{'  '}<span className="text-blue-300">fill_rainbow</span>(leds, NUM_LEDS, <span className="text-blue-300">millis</span>() / <span className="text-orange-300">10</span>, <span className="text-orange-300">5</span>);<br/>
-{'  '}FastLED.<span className="text-blue-300">show</span>();<br/>
+<span className="text-blue-400">void</span> <span className="text-yellow-200">GenerateBufferLed</span>() {'{\n'}
+{'    '}<span className="text-blue-400">uint8_t</span> *window;{'\n'}
+{'    '}<span className="text-purple-400">if</span> (mySnakeGame.__Snake_running) window = mySnakeGame.__window;{'\n'}
+{'    '}<span className="text-purple-400">else</span> window = myMatrice.__MatriceLed;{'\n\n'}
+{'    '}<span className="text-purple-400">for</span> (<span className="text-blue-400">uint8_t</span> i = <span className="text-orange-300">0</span>; i &lt; <span className="text-orange-300">32</span>; i++) {'{\n'}
+{'        '}data_buffer[i] = ((window[i] &gt;&gt; ligneInProcesse) &amp; <span className="text-orange-300">1</span>) ^ <span className="text-orange-300">1</span>; <span className="text-slate-500">// Recupere le bit et l'inverse</span>{'\n'}
+{'    }'}{'\n'}
+{'}'}{'\n\n'}
+<span className="text-blue-400">void</span> <span className="text-yellow-200">ShowLigne</span>() {'{\n'}
+{'    '}<span className="text-slate-500">/* Etteint la matrice */</span>{'\n'}
+{'    '}PORTC &amp;= ~(<span className="text-orange-300">1</span>&lt;&lt;CS1_PIN);{'\n\n'}
+{'    '}<span className="text-slate-500">/* Envoie la ligne */</span>{'\n'}
+{'    '}PORTC = (PORTC &amp;~(<span className="text-orange-300">1</span>&lt;&lt;ALO_PIN)) | (((ligneInProcesse &gt;&gt; BIT0) &amp; <span className="text-orange-300">1</span>) &lt;&lt; ALO_PIN);{'\n'}
+{'    '}PORTC = (PORTC &amp;~(<span className="text-orange-300">1</span>&lt;&lt;AL1_PIN)) | (((ligneInProcesse &gt;&gt; BIT1) &amp; <span className="text-orange-300">1</span>) &lt;&lt; AL1_PIN);{'\n'}
+{'    '}PORTC = (PORTC &amp;~(<span className="text-orange-300">1</span>&lt;&lt;AL2_PIN)) | (((ligneInProcesse &gt;&gt; BIT2) &amp; <span className="text-orange-300">1</span>) &lt;&lt; AL2_PIN);{'\n'}
 {'}'}
                   </code>
                 </pre>
               </div>
             </motion.div>
           </div>
+
+          {/* Bouton d'accès au GitHub */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="mt-16 flex justify-center"
+          >
+            <Link 
+              href="https://github.com" // Remplacez avec votre lien de dépôt Github
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              <motion.button
+                whileHover={{ scale: 1.05, backgroundColor: "#1e293b" }}
+                whileTap={{ scale: 0.95 }}
+                className="flex items-center gap-3 px-8 py-4 bg-slate-900 text-white rounded-full font-semibold shadow-lg shadow-slate-900/20 transition-colors"
+              >
+                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
+                </svg>
+                Voir le code sur GitHub
+              </motion.button>
+            </Link>
+          </motion.div>
         </div>
 
         {/* 5. Accordion Gallery à la fin */}

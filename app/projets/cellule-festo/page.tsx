@@ -73,7 +73,7 @@ export default function CelluleFestoPage() {
     {
       title: "Passage en Sémaphore",
       description:
-        "Traduction de la modélisation en langage automate (Ladder/ST) pour piloter l'Automate Programmable Industriel (API). Intégration en temps réel des retours d'information des capteurs inductifs et optiques.",
+        "Optimisation et passage au dernier cahier des charges. Traduction du graphes actuel en graphe a sémaphore. Davantage utile lorsque nous avons plusieur pieces en simultanées sur la machine avec des couleurs/materiaux differents, cela permet d'avoir un visuel direct avec le logiciel",
       content: (
         <img
           src="/IMG_Cellule-3.png"
