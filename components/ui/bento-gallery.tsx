@@ -106,11 +106,10 @@ transition = {{ duration: 0.2 }}
 className = "fixed inset-0 z-[100] flex items-center justify-center bg-slate-950/90 backdrop-blur-md p-4 sm:p-8 md:p-12"
 onClick = {() => setSelectedImage(null)} // Ferme au clic sur le fond noir
           >
-{/* Bouton de fermeture (Croix) */ }
+{/* Bouton de fermeture (Croix) SANS L'ATTRIBUT aria-label QUI POSAIT PROBLÈME */ }
     < button
 onClick = {() => setSelectedImage(null)}
 className = "absolute top-6 right-6 md:top-8 md:right-8 p-3 bg-white/10 hover:bg-white/20 text-white rounded-full transition-colors z-[101]"
-aria - label="Fermer l'image"
     >
     <svg xmlns="http://www.w3.org/2000/svg" width = "24" height = "24" viewBox = "0 0 24 24" fill = "none" stroke = "currentColor" strokeWidth = "2" strokeLinecap = "round" strokeLinejoin = "round" >
         <line x1="18" y1 = "6" x2 = "6" y2 = "18" > </line>
