@@ -12,9 +12,9 @@ const font = Plus_Jakarta_Sans({
 
 // Les balises SEO pour Google
 export const metadata: Metadata = {
-  title: "Clément PILI | Ingénierie, Systèmes Embarqués & Web",
-  description: "Portfolio de Clément PILI. Étudiant en Génie Électrique et Informatique Industrielle (GEII). Découvrez mes projets en systèmes embarqués, électronique et développement.",
-  keywords: ["Clément PILI", "Portfolio", "Ingénieur", "Systèmes Embarqués", "Électronique", "Développeur", "GEII"],
+  title: "Clément PILI | Electronique et Systèmes Embarqués",
+  description: "Portfolio de Clément PILI. Étudiant en Génie Électrique et Informatique Industrielle (GEII). Découvrez mes projets en systèmes embarqués, électronique",
+  keywords: ["Clément PILI", "Portfolio", "Ingénieur", "Systèmes Embarqués", "Électronique", "Développeur", "GEII", "PILI", "IUT Annecy"],
   authors: [{ name: "Clément PILI" }],
   creator: "Clément PILI",
   openGraph: {
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     locale: "fr_FR",
     url: "https://c-pili.github.io",
     title: "Clément PILI | Portfolio",
-    description: "Conception matérielle et architectures logicielles modernes.",
+    description: "Ingenierie en Electronique et Systeme Embarquée",
     siteName: "Clément PILI Portfolio",
   },
   verification: {
