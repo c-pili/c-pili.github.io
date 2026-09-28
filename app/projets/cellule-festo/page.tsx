@@ -98,7 +98,7 @@ export default function CelluleFestoPage() {
           href="/"
           className="inline-flex items-center gap-2 text-xs font-mono text-slate-500 hover:text-slate-900 transition mb-10"
         >
-          &larr; Retour à l&apos;accueil
+          Retour à l'accueil
         </Link>
 
         {/* 1. Nouvelle animation fluide d'image (Smooth Reveal) */}
