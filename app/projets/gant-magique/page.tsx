@@ -4,21 +4,19 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { Footer } from "@/components/Footer";
 import { AnimatedTooltip } from "@/components/ui/animated-tooltip";
-import { SmoothImageReveal } from "@/components/ui/smooth-image-reveal"; // <-- Remplacé
-import { AccordionGallery } from "@/components/ui/accordion-gallery";
+import { SmoothImageReveal } from "@/components/ui/smooth-image-reveal";
+import { BentoGallery } from "@/components/ui/bento-gallery"; // <-- NOUVEAU COMPOSANT
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function GantMagiquePage() {
     const [activeSection, setActiveSection] = useState(0);
 
-    // Écouteur de défilement pour détecter quelle section textuelle est à l'écran
     useEffect(() => {
         const handleScroll = () => {
             const elements = document.querySelectorAll(".scroll-section");
             let current = 0;
             elements.forEach((el, index) => {
                 const rect = el.getBoundingClientRect();
-                // Si le bloc de texte arrive dans la moitié supérieure de l'écran
                 if (rect.top < window.innerHeight / 2) {
                     current = index;
                 }
@@ -27,7 +25,7 @@ export default function GantMagiquePage() {
         };
 
         window.addEventListener("scroll", handleScroll);
-        handleScroll(); // Init au chargement
+        handleScroll();
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
@@ -85,11 +83,29 @@ export default function GantMagiquePage() {
 },
   ];
 
-const galleryImages = [
-    "/IMG_GantsMag.jpg",
-    "/IMG_Gants-1.png",
-    "/IMG_Gants-2.png",
-    "/IMG_Gants-3.png",
+// NOUVELLES DONNÉES POUR LA GALERIE BENTO
+const galleryItems = [
+    {
+        id: 1,
+        src: "/IMG_GantsMag.jpg",
+        title: "Le Gant en Action",
+        desc: "Vue globale du dispositif intégré sur le gant. Les capteurs de flexion sont soigneusement cousus pour capter les mouvements avec précision sans entraver l'utilisateur.",
+        className: "md:col-span-2 md:row-span-2 h-[500px]", // Grande image à gauche
+    },
+    {
+        id: 2,
+        src: "/IMG_Gants-1.png",
+        title: "Schéma structurel",
+        desc: "Modélisation de la partie électronique chargée de conditionner les signaux analogiques.",
+        className: "md:col-span-1 md:row-span-1 h-[242px]", // Petite image en haut à droite
+    },
+    {
+        id: 3,
+        src: "/IMG_Gants-3.png",
+        title: "Tests sur LABDEC",
+        desc: "Validation expérimentale des circuits amplificateurs et des seuils de comparaison avant le routage final.",
+        className: "md:col-span-1 md:row-span-1 h-[242px]", // Petite image en bas à droite
+    },
 ];
 
 return (
@@ -99,7 +115,7 @@ return (
           href="/"
 className = "inline-flex items-center gap-2 text-xs font-mono text-slate-500 hover:text-slate-900 transition mb-10"
     >
-          Retour à l'accueil
+          & larr; Retour à l'accueil
     </Link>
 
 {/* 1. Image Smooth Reveal en haut */ }
@@ -131,7 +147,6 @@ className = "text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-950"
 
 {/* 3. Section Architecture Intégrée à la page (Sticky Natif) */ }
 <div className="mt-16 mb-32 flex flex-col md:flex-row items-start gap-12 relative" >
-
     <div className="w-full md:w-1/2 pb-32" >
         <div className="mb-20" >
             <h2 className="text-2xl font-bold text-slate-900 mb-4" > Introduction </h2>
@@ -140,11 +155,10 @@ className = "text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-950"
               </p>
                         </div>
 
-{/* Application de l'animation whileInView sur les blocs de texte */ }
 {
     scrollContent.map((item, index) => (
-        <motion.div 
-                key= { index } 
+        <motion.div
+                key= { index }
                 initial = {{ opacity: 0, y: 30 }}
 whileInView = {{ opacity: 1, y: 0 }}
 viewport = {{ once: true, margin: "-100px" }}
@@ -187,15 +201,17 @@ className = "absolute inset-0"
     </div>
     </div>
 
-{/* 4. Accordion Gallery à la fin */ }
-<div className="mb-10" >
-    <h2 className="text-2xl font-bold text-slate-900 mb-2" > Galerie du projet </h2>
-        < p className = "text-slate-500 text-sm mb-6 font-light" > Survolez les images pour les agrandir.</p>
-            < AccordionGallery images = { galleryImages } />
-                </div>
-                </div>
+{/* 4. NOUVELLE BENTO GALLERY À LA FIN */ }
+<div className="mb-20" >
+    <h2 className="text-2xl font-bold text-slate-900 mb-2" > Galerie Détaillée </h2>
+        < p className = "text-slate-500 text-sm mb-8 font-light" >
+            Découvrez en détail les différentes phases de réalisation du projet.
+          </p>
+                < BentoGallery items = { galleryItems } />
+                    </div>
+                    </div>
 
-                < Footer />
-                </main>
+                    < Footer />
+                    </main>
   );
 }
