@@ -147,7 +147,7 @@ className = "flex-1 w-full"
         <img 
                 src="/IMG_Apropos.jpg"
 onError = {(e) => {
-    (e.target as HTMLElement).setAttribute("src", "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?q=80&w=1000&auto=format&fit=crop");
+    (e.target as HTMLElement).setAttribute("src", "/IMG_Pres.jpg");
 }}
 alt = "Clément au travail"
 className = "w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
@@ -174,7 +174,7 @@ className = "flex-1 h-72 md:h-96 rounded-3xl overflow-hidden shadow-md group rel
     <img 
                 src="/IMG_Action.jpg"
 onError = {(e) => {
-    (e.target as HTMLElement).setAttribute("src", "https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=1000&auto=format&fit=crop");
+    (e.target as HTMLElement).setAttribute("src", "/IMG_Pres_2.jpg");
 }}
 alt = "En pleine conception"
 className = "w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
