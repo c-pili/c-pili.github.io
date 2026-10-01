@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Footer } from "@/components/Footer";
 import { AnimatedTooltip } from "@/components/ui/animated-tooltip";
 import { SmoothImageReveal } from "@/components/ui/smooth-image-reveal";
-import { AccordionGallery } from "@/components/ui/accordion-gallery";
+import { BentoGallery } from "@/components/ui/bento-gallery"; // <-- Ajout de BentoGallery
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function MatriceLedPage() {
@@ -86,11 +86,29 @@ export default function MatriceLedPage() {
 },
   ];
 
-// Images de la galerie
-const galleryImages = [
-    "/IMG_Matrice-1.png",
-    "/IMG_Matrice-2.png",
-    "/IMG_Matrice-3.png",
+// Configuration de la Galerie Bento
+const galleryItems = [
+    {
+        id: 1,
+        src: "/IMG_Matrice-1.png",
+        title: "Synoptique & Routage",
+        desc: "Vue d'ensemble du système et conception du PCB sur Altium Designer.",
+        className: "md:col-span-2 md:row-span-2 h-[500px]", // Grande image
+    },
+    {
+        id: 2,
+        src: "/IMG_Matrice-2.png",
+        title: "Registres à Décalage",
+        desc: "Gestion de l'affichage matriciel via les registres 74HC238 et 74HC4094.",
+        className: "md:col-span-1 md:row-span-1 h-[242px]",
+    },
+    {
+        id: 3,
+        src: "/IMG_Matrice-3.png",
+        title: "Module TinyRTC",
+        desc: "Intégration du module d'horloge I2C pour l'affichage autonome de l'heure.",
+        className: "md:col-span-1 md:row-span-1 h-[242px]",
+    },
 ];
 
 return (
@@ -100,22 +118,17 @@ return (
           href="/"
 className = "inline-flex items-center gap-2 text-xs font-mono text-slate-500 hover:text-slate-900 transition mb-10"
     >
-          Retour à l'accueil
+          & larr; Retour à l'accueil
     </Link>
 
-{/* 1. Image Smooth Reveal en haut */ }
-<SmoothImageReveal 
-          src="/IMG_MatriceLED.png"
-alt = "Matrice LED"
-    />
+    < SmoothImageReveal src = "/IMG_MatriceLED.png" alt = "Matrice LED" />
 
-{/* 2. Titre animé et Tooltip de l'équipe */ }
-    < div className = "mt-12 flex flex-col md:flex-row md:items-end justify-between gap-8 pb-10 border-b border-slate-200/70" >
-        <div>
-        <span className="text-xs font-mono uppercase tracking-widest text-purple-600 font-semibold block mb-3" >
-            Développement C++
-                </span>
-                < motion.h1
+        <div className="mt-12 flex flex-col md:flex-row md:items-end justify-between gap-8 pb-10 border-b border-slate-200/70" >
+            <div>
+            <span className="text-xs font-mono uppercase tracking-widest text-purple-600 font-semibold block mb-3" >
+                Développement C++
+                    </span>
+                    < motion.h1
 initial = {{ opacity: 0, y: 10 }}
 animate = {{ opacity: 1, y: 0 }}
 transition = {{ duration: 0.6, delay: 0.2 }}
@@ -133,21 +146,19 @@ className = "text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-950"
                         </div>
                         </div>
 
-{/* 3. Section Architecture (Sticky Scroll Natif) */ }
-<div className="mt-16 mb-20 flex flex-col md:flex-row items-start gap-12 relative" >
-    <div className="w-full md:w-1/2 pb-32" >
-        <div className="mb-20" >
-            <h2 className="text-2xl font-bold text-slate-900 mb-4" > Introduction </h2>
-                < p className = "text-slate-600 leading-relaxed" >
-                    L'objectif de ce projet est de contrôler un panneau LED similaire à ceux rencontrés dans les transports en commun ou les espaces publics. Le but est de développer un système embarqué capable de récupérer l'heure en temps réel pour l'afficher sur la matrice. Bien que monochrome, ce type de panneau reste essentiel pour diffuser des informations de manière fiable et à faible coût.
-                        </p>
-                        </div>
+                        < div className = "mt-16 mb-20 flex flex-col md:flex-row items-start gap-12 relative" >
+                            <div className="w-full md:w-1/2 pb-32" >
+                                <div className="mb-20" >
+                                    <h2 className="text-2xl font-bold text-slate-900 mb-4" > Introduction </h2>
+                                        < p className = "text-slate-600 leading-relaxed" >
+                                            L'objectif de ce projet est de contrôler un panneau LED similaire à ceux rencontrés dans les transports en commun ou les espaces publics. Le but est de développer un système embarqué capable de récupérer l'heure en temps réel pour l'afficher sur la matrice. Bien que monochrome, ce type de panneau reste essentiel pour diffuser des informations de manière fiable et à faible coût.
+                                                </p>
+                                                </div>
 
-{/* Application de l'animation whileInView sur les blocs de texte */ }
 {
     scrollContent.map((item, index) => (
-        <motion.div 
-                key= { index } 
+        <motion.div
+                key= { index }
                 initial = {{ opacity: 0, y: 30 }}
 whileInView = {{ opacity: 1, y: 0 }}
 viewport = {{ once: true, margin: "-100px" }}
@@ -190,13 +201,11 @@ className = "absolute inset-0"
     </div>
     </div>
 
-{/* 4. Section BLOC DE CODE (Animé au défilement) */ }
+{/* Section BLOC DE CODE */ }
 <div className="mb-32 py-16 border-t border-slate-200/70 overflow-hidden" >
     <div className="flex flex-col lg:flex-row items-center gap-12" >
-
-    {/* Texte descriptif du code */ }
-        < motion.div
-initial = {{ opacity: 0, x: -40 }}
+        <motion.div
+              initial={ { opacity: 0, x: -40 } }
 whileInView = {{ opacity: 1, x: 0 }}
 viewport = {{ once: true, margin: "-100px" }}
 transition = {{ duration: 0.7, ease: "easeOut" }}
@@ -217,16 +226,14 @@ className = "lg:w-1/3"
                                         </div>
                                         </motion.div>
 
-{/* Éditeur de Code Animé - Version sécurisée pour Turbopack */ }
-<motion.div
-              initial={ { opacity: 0, x: 40, scale: 0.95 } }
+                                        < motion.div
+initial = {{ opacity: 0, x: 40, scale: 0.95 }}
 whileInView = {{ opacity: 1, x: 0, scale: 1 }}
 viewport = {{ once: true, margin: "-100px" }}
 transition = {{ duration: 0.7, ease: "easeOut" }}
 className = "lg:w-2/3 w-full rounded-xl bg-[#0d1117] border border-slate-700 shadow-2xl overflow-hidden"
     >
-{/* Barre supérieure style macOS */ }
-    < div className = "flex items-center px-4 py-3 bg-[#161b22] border-b border-slate-700/50" >
+    <div className="flex items-center px-4 py-3 bg-[#161b22] border-b border-slate-700/50" >
         <div className="flex space-x-2" >
             <div className="w-3 h-3 rounded-full bg-red-500/80" > </div>
                 < div className = "w-3 h-3 rounded-full bg-yellow-500/80" > </div>
@@ -235,12 +242,11 @@ className = "lg:w-2/3 w-full rounded-xl bg-[#0d1117] border border-slate-700 sha
                         < span className = "ml-4 text-xs text-slate-400 font-mono" > main.cpp </span>
                             </div>
 
-{/* Code avec balises sécurisées */ }
-<div className="p-5 overflow-x-auto" >
-    <pre className="text-sm font-mono leading-relaxed text-slate-300" >
-        <code>
-        <span className="text-blue-400" > { "void "} </span>
-            < span className = "text-yellow-200" > { "GenerateBufferLed"} </span>
+                            < div className = "p-5 overflow-x-auto" >
+                                <pre className="text-sm font-mono leading-relaxed text-slate-300" >
+                                    <code>
+                                    <span className="text-blue-400" > { "void "} </span>
+                                        < span className = "text-yellow-200" > { "GenerateBufferLed"} </span>
 { "() {\n" }
 { "    " }
 <span className="text-blue-400" > { "uint8_t "} </span>
@@ -297,15 +303,14 @@ className = "lg:w-2/3 w-full rounded-xl bg-[#0d1117] border border-slate-700 sha
     </motion.div>
     </div>
 
-{/* Bouton d'accès au GitHub */ }
-<motion.div 
-            initial={ { opacity: 0, y: 20 } }
+    < motion.div
+initial = {{ opacity: 0, y: 20 }}
 whileInView = {{ opacity: 1, y: 0 }}
 viewport = {{ once: true, margin: "-50px" }}
 transition = {{ duration: 0.6, delay: 0.3 }}
 className = "mt-16 flex justify-center"
     >
-    <Link 
+    <Link
               href="https://github.com/MatthieuDeroo02/ProjetS2-MatriceLed"
 target = "_blank"
 rel = "noopener noreferrer"
@@ -315,8 +320,7 @@ rel = "noopener noreferrer"
 whileTap = {{ scale: 0.95 }}
 className = "flex items-center gap-3 px-8 py-4 bg-slate-900 text-white rounded-full font-semibold shadow-lg shadow-slate-900/20 transition-colors"
     >
-{/* SVG sans aria-hidden pour ne pas perturber l'auto-formateur de Visual Studio */ }
-    < svg className = "w-6 h-6" fill = "currentColor" viewBox = "0 0 24 24" >
+    <svg className="w-6 h-6" fill = "currentColor" viewBox = "0 0 24 24" >
         <path fillRule="evenodd" d = "M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule = "evenodd" />
             </svg>
                 Voir le code sur GitHub
@@ -325,15 +329,17 @@ className = "flex items-center gap-3 px-8 py-4 bg-slate-900 text-white rounded-f
     </motion.div>
     </div>
 
-{/* 5. Accordion Gallery à la fin */ }
-<div className="mb-10" >
-    <h2 className="text-2xl font-bold text-slate-900 mb-2" > Galerie du projet </h2>
-        < p className = "text-slate-500 text-sm mb-6 font-light" > Survolez les images pour les agrandir.</p>
-            < AccordionGallery images = { galleryImages } />
-                </div>
-                </div>
+{/* Galerie détaillée avec BentoGallery */ }
+<div className="mb-20" >
+    <h2 className="text-2xl font-bold text-slate-900 mb-2" > Galerie Détaillée </h2>
+        < p className = "text-slate-500 text-sm mb-8 font-light" >
+            Cliquez sur un schéma ou une image pour l'agrandir.
+                </p>
+                < BentoGallery items = { galleryItems } />
+                    </div>
+                    </div>
 
-                < Footer />
-                </main>
+                    < Footer />
+                    </main>
   );
 }
