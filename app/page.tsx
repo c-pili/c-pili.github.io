@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 
 export default function Home() {
     const [hovered, setHovered] = useState<number | null>(null);
-    const scrollContainerRef = useRef<HTMLDivElement>(null); // Référence pour le défilement
+    const scrollContainerRef = useRef<HTMLDivElement>(null);
 
     const projects = [
         {
@@ -41,7 +41,6 @@ export default function Home() {
         },
     ];
 
-    // Fonction pour faire défiler le conteneur avec les flèches
     const scroll = (direction: "left" | "right") => {
         if (scrollContainerRef.current) {
             const scrollAmount = direction === "left" ? -400 : 400;
@@ -49,7 +48,6 @@ export default function Home() {
         }
     };
 
-    // Animation pour l'apparition en cascade des projets
     const containerVariants: any = {
         hidden: { opacity: 0 },
         show: {
@@ -72,10 +70,9 @@ export default function Home() {
     return (
         <main className= "min-h-screen bg-[#FBFBFD] text-slate-900 antialiased selection:bg-blue-100 selection:text-blue-900 overflow-hidden" >
 
-        {/* 1. Hero Section Épurée */ }
+        {/* Hero Section */ }
         < section className = "max-w-5xl mx-auto px-6 pt-24 pb-20 md:pt-32 md:pb-24" >
             <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-10" >
-
                 <motion.div
                         initial={ { opacity: 0, y: 20 } }
     animate = {{ opacity: 1, y: 0 }
@@ -129,10 +126,9 @@ className = "h-full w-full object-cover"
     </div>
     </section>
 
-{/* 2. SECTION : À propos de moi */ }
+{/* SECTION : À propos de moi */ }
 <section className="max-w-5xl mx-auto px-6 py-20 border-t border-slate-200/60 overflow-hidden" >
     <div className="flex flex-col md:flex-row items-center gap-12" >
-
         <motion.div 
                         initial={ { opacity: 0, x: -40 } }
 whileInView = {{ opacity: 1, x: 0 }}
@@ -170,11 +166,10 @@ className = "w-full h-full object-cover transition-transform duration-700 group-
     />
     </div>
     </motion.div>
-
     </div>
     </section>
 
-{/* 3. SECTION : Médias (Photo & Vidéo) */ }
+{/* SECTION : Médias */ }
 <section className="bg-white py-20 border-y border-slate-200/60" >
     <div className="max-w-5xl mx-auto px-6" >
         <div className="flex flex-col md:flex-row gap-6" >
@@ -218,7 +213,7 @@ className = "w-full h-full object-cover opacity-90 transition-opacity duration-7
             </div>
             </section>
 
-{/* 4. Section Projets (Slider Horizontal) */ }
+{/* Section Projets (Slider Horizontal) */ }
 <section id="projets" className = "max-w-6xl mx-auto px-6 py-24" >
     <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6" >
         <div>
@@ -230,7 +225,7 @@ className = "w-full h-full object-cover opacity-90 transition-opacity duration-7
                     </h2>
                     </div>
 
-{/* Flèches de navigation personnalisées */ }
+{/* Flèches de navigation */ }
 <div className="flex items-center gap-4" >
     <p className="text-sm text-slate-500 max-w-xs font-light hidden lg:block mr-4" >
         Cliquez sur un projet pour explorer son architecture technique et ses détails.
@@ -239,7 +234,6 @@ className = "w-full h-full object-cover opacity-90 transition-opacity duration-7
                 <button 
                                 onClick={ () => scroll("left") }
 className = "p-3 rounded-full bg-white border border-slate-200 shadow-sm hover:bg-slate-50 hover:scale-105 transition-all"
-aria - label="Défiler vers la gauche"
     >
     <svg className="w-5 h-5 text-slate-700" fill = "none" stroke = "currentColor" viewBox = "0 0 24 24" >
         <path strokeLinecap="round" strokeLinejoin = "round" strokeWidth = { 2} d = "M15 19l-7-7 7-7" />
@@ -248,7 +242,6 @@ aria - label="Défiler vers la gauche"
             < button
 onClick = {() => scroll("right")}
 className = "p-3 rounded-full bg-white border border-slate-200 shadow-sm hover:bg-slate-50 hover:scale-105 transition-all"
-aria - label="Défiler vers la droite"
     >
     <svg className="w-5 h-5 text-slate-700" fill = "none" stroke = "currentColor" viewBox = "0 0 24 24" >
         <path strokeLinecap="round" strokeLinejoin = "round" strokeWidth = { 2} d = "M9 5l7 7-7 7" />
@@ -265,7 +258,6 @@ variants = { containerVariants }
 initial = "hidden"
 whileInView = "show"
 viewport = {{ once: true, margin: "-100px" }}
-// C'est ici que la magie opère : flex, overflow-x-auto et on cache la scrollbar native
 className = "flex gap-7 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-8 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
     >
 {
@@ -273,7 +265,6 @@ className = "flex gap-7 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-8
         <motion.div 
                             variants= { itemVariants } 
                             key = { project.title }
-                            // On fixe une largeur fixe pour que les éléments ne s'écrasent pas
                             className = "w-[85vw] sm:w-[360px] shrink-0 snap-start"
         >
         <Link
@@ -286,40 +277,4 @@ className = {
         hovered !== null && hovered !== index && "opacity-60 scale-[0.99] filter blur-[0.5px]"
                                 )}
                             >
-    <div className="h-60 w-full overflow-hidden bg-slate-100 relative" >
-        <img
-                                        src={ project.src }
-alt = { project.title }
-className = "h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
-    />
-    <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-mono text-slate-800 border border-slate-200/60 font-medium" >
-    { project.category }
-        </div>
-        </div>
-
-        < div className = "p-6 flex flex-col flex-1 justify-between bg-white" >
-            <div>
-            <h3 className="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors" >
-            { project.title }
-                </h3>
-                < p className = "text-sm text-slate-600 mt-2 leading-relaxed font-normal" >
-                { project.desc }
-                    </p>
-                    </div>
-
-                    < div className = "mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-mono text-slate-400 group-hover:text-blue-600 transition-colors" >
-                        <span>En savoir plus </span>
-                            < span className = "group-hover:translate-x-1 transition-transform" >→</span>
-                                </div>
-                                </div>
-                                </Link>
-                                </motion.div>
-                    ))}
-</motion.div>
-    </section>
-
-{/* Footer */ }
-<Footer />
-    </main>
-    );
-}
+    <div className="h-60 w-full overflow-hidden bg-slate
