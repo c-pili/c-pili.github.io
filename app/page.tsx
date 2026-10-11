@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Link from "next/link";
 import { Footer } from "@/components/Footer";
 import { cn } from "@/lib/utils";
@@ -8,12 +8,13 @@ import { motion } from "framer-motion";
 
 export default function Home() {
     const [hovered, setHovered] = useState<number | null>(null);
+    const scrollContainerRef = useRef<HTMLDivElement>(null); // Référence pour le défilement
 
     const projects = [
         {
             title: "Billy CubeSat",
             src: "/IMG_BillyCubesat.png",
-            href: "https://billy-spaceteam.github.io", 
+            href: "https://billy-spaceteam.github.io",
             category: "Aérospatial & Embarqué",
             desc: "Conception d'un nano-satellite CubeSat innovant avec télémétrie et contrôle d'attitude autonome.",
         },
@@ -39,6 +40,14 @@ export default function Home() {
             desc: "Réalisation d'un grafcet automatisé pour une chaîne de production.",
         },
     ];
+
+    // Fonction pour faire défiler le conteneur avec les flèches
+    const scroll = (direction: "left" | "right") => {
+        if (scrollContainerRef.current) {
+            const scrollAmount = direction === "left" ? -400 : 400;
+            scrollContainerRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
+        }
+    };
 
     // Animation pour l'apparition en cascade des projets
     const containerVariants: any = {
@@ -68,7 +77,7 @@ export default function Home() {
             <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-10" >
 
                 <motion.div
-            initial={ { opacity: 0, y: 20 } }
+                        initial={ { opacity: 0, y: 20 } }
     animate = {{ opacity: 1, y: 0 }
 }
 transition = {{ duration: 0.7, ease: "easeOut" }}
@@ -92,7 +101,7 @@ className = "flex-1 space-y-6"
 
                                         < div className = "flex items-center gap-4 pt-2" >
                                             <Link
-                href="#projets"
+                                href="#projets"
 className = "px-6 py-3 rounded-full bg-slate-950 text-white font-medium text-sm hover:bg-slate-800 transition shadow-sm active:scale-95"
     >
     Découvrir mes projets
@@ -108,7 +117,7 @@ className = "relative shrink-0 mx-auto md:mx-0"
     >
     <div className="h-44 w-44 sm:h-52 sm:w-52 rounded-2xl overflow-hidden border-2 border-white shadow-[0_12px_30px_rgba(0,0,0,0.08)] bg-slate-100 ring-1 ring-slate-200/80" >
         <img
-                src="/IMG_Profile.JPG"
+                                src="/IMG_Profile.JPG"
 onError = {(e) => {
     (e.target as HTMLElement).setAttribute("src", "/IMG_Accueil.jpg");
 }}
@@ -125,7 +134,7 @@ className = "h-full w-full object-cover"
     <div className="flex flex-col md:flex-row items-center gap-12" >
 
         <motion.div 
-            initial={ { opacity: 0, x: -40 } }
+                        initial={ { opacity: 0, x: -40 } }
 whileInView = {{ opacity: 1, x: 0 }}
 viewport = {{ once: true, margin: "-100px" }}
 transition = {{ duration: 0.7, ease: "easeOut" }}
@@ -136,10 +145,10 @@ className = "flex-1"
             < div className = "space-y-4 text-slate-600 leading-relaxed" >
                 <p>
                 Actuellement étudiant en deuxième année de BUT GEII à l'Université Savoie Mont Blanc, je me spécialise dans l'Électronique des Systèmes Embarqués(ESE).
-              </p>
+                            </p>
                     <p>
-                Mon approche associe la conception matérielle(schématiques, routage de PCB sur Altium Designer) et le développement logiciel(C, C++, Python, Qt) pour donner vie à des systèmes autonomes et intelligents.J'aime particulièrement relever des défis techniques qui lient l'électronique de précision au code embarqué.
-              </p>
+                                Mon approche associe la conception matérielle(schématiques, routage de PCB sur Altium Designer) et le développement logiciel(C, C++, Python, Qt) pour donner vie à des systèmes autonomes et intelligents.J'aime particulièrement relever des défis techniques qui lient l'électronique de précision au code embarqué.
+                            </p>
     </div>
     </motion.div>
 
@@ -152,7 +161,7 @@ className = "flex-1 w-full"
     >
     <div className="rounded-3xl overflow-hidden shadow-lg border border-slate-200/60 bg-slate-100 h-80 relative group" >
         <img 
-                src="/IMG_Apropos.jpg"
+                                src="/IMG_Apropos.jpg"
 onError = {(e) => {
     (e.target as HTMLElement).setAttribute("src", "/IMG_Pres.jpg");
 }}
@@ -165,21 +174,19 @@ className = "w-full h-full object-cover transition-transform duration-700 group-
     </div>
     </section>
 
-{/* 3. SECTION : Médias (Photo & Vidéo) juste avant les projets */ }
+{/* 3. SECTION : Médias (Photo & Vidéo) */ }
 <section className="bg-white py-20 border-y border-slate-200/60" >
     <div className="max-w-5xl mx-auto px-6" >
         <div className="flex flex-col md:flex-row gap-6" >
-
-        {/* Une belle photo d'action / de projet */ }
-            < motion.div
-initial = {{ opacity: 0, scale: 0.9, y: 30 }}
+            <motion.div
+                            initial={ { opacity: 0, scale: 0.9, y: 30 } }
 whileInView = {{ opacity: 1, scale: 1, y: 0 }}
 viewport = {{ once: true, margin: "-50px" }}
 transition = {{ duration: 0.6, ease: "easeOut" }}
 className = "flex-1 h-72 md:h-96 rounded-3xl overflow-hidden shadow-md group relative bg-slate-100"
     >
     <img 
-                src="/IMG_Action.jpg"
+                                src="/IMG_Action.jpg"
 onError = {(e) => {
     (e.target as HTMLElement).setAttribute("src", "/IMG_Pres_2.jpg");
 }}
@@ -188,36 +195,32 @@ className = "w-full h-full object-cover transition-transform duration-1000 group
     />
     </motion.div>
 
-{/* Un lecteur Vidéo fluide et muet (style background dynamique) */ }
-<motion.div 
-              initial={ { opacity: 0, scale: 0.9, y: 30 } }
+    < motion.div
+initial = {{ opacity: 0, scale: 0.9, y: 30 }}
 whileInView = {{ opacity: 1, scale: 1, y: 0 }}
 viewport = {{ once: true, margin: "-50px" }}
 transition = {{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
 className = "flex-1 h-72 md:h-96 rounded-3xl overflow-hidden shadow-md group relative bg-slate-900 border border-slate-800"
     >
-{/* REMARQUE : Placez une vidéo courte dans public/Video_Projet.mp4 */ }
-    < video
-src = "/VID_MAIN-2.mp4"
+    <video
+                                src="/VID_MAIN-2.mp4"
 autoPlay
 loop
 muted
 playsInline
 className = "w-full h-full object-cover opacity-90 transition-opacity duration-700 group-hover:opacity-100"
     />
-{/* Si la vidéo n'est pas trouvée, un message subtil s'affiche derrière */ }
-    < div className = "absolute inset-0 -z-10 flex items-center justify-center text-slate-500 text-sm font-mono" >
+    <div className="absolute inset-0 -z-10 flex items-center justify-center text-slate-500 text-sm font-mono" >
         Vidéo introuvable
             </div>
             </motion.div>
-
             </div>
             </div>
             </section>
 
-{/* 4. Section Projets (Animée en cascade / Stagger) */ }
+{/* 4. Section Projets (Slider Horizontal) */ }
 <section id="projets" className = "max-w-6xl mx-auto px-6 py-24" >
-    <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-4" >
+    <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6" >
         <div>
         <span className="text-xs font-mono uppercase tracking-widest text-blue-600 font-semibold" >
             Portfolio
@@ -226,35 +229,66 @@ className = "w-full h-full object-cover opacity-90 transition-opacity duration-7
                 Réalisations sélectionnées
                     </h2>
                     </div>
-                    < p className = "text-sm text-slate-500 max-w-xs font-light" >
-                        Cliquez sur un projet pour explorer son architecture technique et ses détails.
-          </p>
-                            </div>
 
-{/* Grille de cartes gérée par Framer Motion pour l'apparition en cascade */ }
+{/* Flèches de navigation personnalisées */ }
+<div className="flex items-center gap-4" >
+    <p className="text-sm text-slate-500 max-w-xs font-light hidden lg:block mr-4" >
+        Cliquez sur un projet pour explorer son architecture technique et ses détails.
+                        </p>
+            < div className = "flex gap-2" >
+                <button 
+                                onClick={ () => scroll("left") }
+className = "p-3 rounded-full bg-white border border-slate-200 shadow-sm hover:bg-slate-50 hover:scale-105 transition-all"
+aria - label="Défiler vers la gauche"
+    >
+    <svg className="w-5 h-5 text-slate-700" fill = "none" stroke = "currentColor" viewBox = "0 0 24 24" >
+        <path strokeLinecap="round" strokeLinejoin = "round" strokeWidth = { 2} d = "M15 19l-7-7 7-7" />
+            </svg>
+            </button>
+            < button
+onClick = {() => scroll("right")}
+className = "p-3 rounded-full bg-white border border-slate-200 shadow-sm hover:bg-slate-50 hover:scale-105 transition-all"
+aria - label="Défiler vers la droite"
+    >
+    <svg className="w-5 h-5 text-slate-700" fill = "none" stroke = "currentColor" viewBox = "0 0 24 24" >
+        <path strokeLinecap="round" strokeLinejoin = "round" strokeWidth = { 2} d = "M9 5l7 7-7 7" />
+            </svg>
+            </button>
+            </div>
+            </div>
+            </div>
+
+{/* Conteneur du défilement horizontal */ }
 <motion.div 
-          variants={ containerVariants }
+                    ref={ scrollContainerRef }
+variants = { containerVariants }
 initial = "hidden"
 whileInView = "show"
 viewport = {{ once: true, margin: "-100px" }}
-className = "grid grid-cols-1 md:grid-cols-3 gap-7"
+// C'est ici que la magie opère : flex, overflow-x-auto et on cache la scrollbar native
+className = "flex gap-7 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-8 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
     >
 {
     projects.map((project, index) => (
-        <motion.div variants= { itemVariants } key = { project.title } >
+        <motion.div 
+                            variants= { itemVariants } 
+                            key = { project.title }
+                            // On fixe une largeur fixe pour que les éléments ne s'écrasent pas
+                            className = "w-[85vw] sm:w-[360px] shrink-0 snap-start"
+        >
         <Link
-                href={ project.href }
-                onMouseEnter = {() => setHovered(index)}
+                                href={ project.href }
+                                onMouseEnter = {() => setHovered(index)}
 onMouseLeave = {() => setHovered(null)}
 className = {
     cn(
-                  "group relative rounded-2xl overflow-hidden bg-white border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full",
+                                    "group relative rounded-2xl overflow-hidden bg-white border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full",
         hovered !== null && hovered !== index && "opacity-60 scale-[0.99] filter blur-[0.5px]"
-                )}
-              >
+                                )}
+                            >
     <div className="h-60 w-full overflow-hidden bg-slate-100 relative" >
         <img
-                    src={ project.src }
+                                        src={ project.src }
 alt = { project.title }
 className = "h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
     />
@@ -280,12 +314,12 @@ className = "h-full w-full object-cover group-hover:scale-105 transition-transfo
                                 </div>
                                 </Link>
                                 </motion.div>
-          ))}
+                    ))}
 </motion.div>
     </section>
 
 {/* Footer */ }
 <Footer />
     </main>
-  );
+    );
 }
