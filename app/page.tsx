@@ -11,6 +11,13 @@ export default function Home() {
 
     const projects = [
         {
+            title: "Billy CubeSat",
+            src: "/IMG_BillyCubesat.png",
+            href: "https://billy-spaceteam.github.io", 
+            category: "Aérospatial & Embarqué",
+            desc: "Conception d'un nano-satellite CubeSat innovant avec télémétrie et contrôle d'attitude autonome.",
+        },
+        {
             title: "Gant Magique",
             src: "/IMG_GantsMag.jpg",
             href: "/projets/gant-magique",
