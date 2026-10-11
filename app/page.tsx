@@ -277,4 +277,40 @@ className = {
         hovered !== null && hovered !== index && "opacity-60 scale-[0.99] filter blur-[0.5px]"
                                 )}
                             >
-    <div className="h-60 w-full overflow-hidden bg-slate
+    <div className="h-60 w-full overflow-hidden bg-slate-100 relative" >
+        <img
+                                        src={ project.src }
+alt = { project.title }
+className = "h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
+    />
+    <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-mono text-slate-800 border border-slate-200/60 font-medium" >
+    { project.category }
+        </div>
+        </div>
+
+        < div className = "p-6 flex flex-col flex-1 justify-between bg-white" >
+            <div>
+            <h3 className="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors" >
+            { project.title }
+                </h3>
+                < p className = "text-sm text-slate-600 mt-2 leading-relaxed font-normal" >
+                { project.desc }
+                    </p>
+                    </div>
+
+                    < div className = "mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-mono text-slate-400 group-hover:text-blue-600 transition-colors" >
+                        <span>En savoir plus </span>
+                            < span className = "group-hover:translate-x-1 transition-transform" >→</span>
+                                </div>
+                                </div>
+                                </Link>
+                                </motion.div>
+                    ))}
+</motion.div>
+    </section>
+
+{/* Footer */ }
+<Footer />
+    </main>
+    );
+}
